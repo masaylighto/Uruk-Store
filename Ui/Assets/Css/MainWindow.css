@@ -1,0 +1,33 @@
+.bg-Blueish{
+background-image: url("../Icons/Bg.png");
+}
+.bg-Trans{
+    background: transparent;
+}
+.Rounded{
+    border-radius: 10px;
+}
+.shadow{
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.118);
+}
+.Border-none{
+border: none;
+}
+.Bg-white-Trans{
+    background: rgba(255, 255, 255, 0.85);
+}
+.Bg-white{
+    background: white;
+}
+.SettingsIcon{
+    background: url("../Icons/Settings.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+}
+.HomeIcon{
+    background: url("../Icons/Home.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+}
