@@ -1,5 +1,6 @@
 #include <gtkmm.h>
 #include<iostream>
+#include "../Helper/Variety.h"
 #ifndef H_Window
 #define H_Window
 /*
@@ -10,7 +11,7 @@ class Window
 private:
    //This Fill Will Hold The Builder Instance So We Can Extract Element From It
    Glib::RefPtr<Gtk::Builder> _Builder ;
-   Gtk::Window*  _Window  ;
+   Glib::RefPtr<Gtk::Window>  _Window  ;
    /*
    read glade file 
    */
@@ -34,7 +35,7 @@ public:
     /*
     show window
     */
-    Gtk::Window* GetWindow();
+    Glib::RefPtr<Gtk::Window>  GetWindow();
 };
 
 

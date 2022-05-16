@@ -1,31 +1,36 @@
 #include"../../Headers/Base/Window.h"
-#include <fstream>
+
 
 Window::Window(std::string PathToGladeFile,std::string WindowName)
-{
+{  
+   
     InitBuilder(PathToGladeFile);
     ExtractWindow(WindowName);
 }
 void Window::InitBuilder(std::string PathToGladeFile){
-  
-     _Builder = Gtk::Builder::create_from_file(PathToGladeFile);
-  
+   
+   std::string GladeFileContent= ReadFileText(PathToGladeFile);
+  _Builder = Gtk::Builder::create_from_string(GladeFileContent);
+    
 }
 void Window::ExtractWindow(std::string WindowName)
 {
-   _Builder.get()->get_widget<Gtk::Window>(WindowName.c_str(),_Window);
+    _Window = ExtractWidget<Gtk::Window>(WindowName);
 }
-Gtk::Window* Window::GetWindow()
+Glib::RefPtr<Gtk::Window> Window::GetWindow()
 {
     return _Window;
 }
 template<class Widget> Glib::RefPtr<Widget> Window::ExtractWidget (std::string WidgetName)
 {
-  Glib::RefPtr<Widget> ExtractedWidget ;
- _Builder.get()->get_widget<Gtk::Window>(WidgetName.c_str(),ExtractedWidget);
-  return ExtractedWidget;
+    //create Pointer to Receive Widget
+   Widget* ExtractedWidget;
+   //extract widget from the builder
+   _Builder.get()->get_widget<Widget>(WidgetName.c_str(),ExtractedWidget);
+   //set it inside of Smart Pointer Then return it
+   return Glib::RefPtr<Widget>(ExtractedWidget);
 }
 Window::~Window()
 {
-    delete _Window;
+   
 }

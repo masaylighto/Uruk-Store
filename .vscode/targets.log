@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 16 17:42:55 2022
+# Make data base, printed on Mon May 16 23:26:17 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d905876f-8d6b-4e68-8d04-2b3256066e0e.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d19d149c-90be-4541-8185-958b8ded5e7a.sock
 # environment
 VSCODE_CWD = /home/lucius/Desktop
 # default
@@ -77,7 +77,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-DgkYuhBRXgwX/agent.1231
+SSH_AUTH_SOCK = /tmp/ssh-3qRS7jVEIXr6/agent.1340
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -89,7 +89,7 @@ XDG_SESSION_DESKTOP = KDE
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # makefile (from 'Makefile', line 73)
-CMAKE_BINARY_DIR = /home/lucius/Desktop/UrukStore
+CMAKE_BINARY_DIR = /home/lucius/Desktop/Uruk-Store
 # environment
 SNAP_REEXEC = 
 # automatic
@@ -97,7 +97,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 69473
+VSCODE_PID = 2996
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -105,9 +105,9 @@ XDG_SESSION_TYPE = x11
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 70)
-CMAKE_SOURCE_DIR = /home/lucius/Desktop/UrukStore
+CMAKE_SOURCE_DIR = /home/lucius/Desktop/Uruk-Store
 # environment
-SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1580,unix/lucius:/tmp/.ICE-unix/1580
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1687,unix/lucius:/tmp/.ICE-unix/1687
 # automatic
 *F = $(notdir $*)
 # environment
@@ -205,7 +205,7 @@ SNAP_DATA = /var/snap/code/96
 # environment
 SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
 # environment
-SSH_AGENT_PID = 1312
+SSH_AGENT_PID = 1404
 # makefile (from 'Makefile', line 44)
 MAKESILENT = -s
 # environment
@@ -235,7 +235,7 @@ SNAP_NAME = code
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/96/usr/share/glib-2.0/schemas
 # environment
-XDG_SESSION_ID = 3
+XDG_SESSION_ID = 4
 # environment
 XCURSOR_SIZE = 24
 # default
@@ -275,10 +275,11 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # RCS: could not be stat'd.
 # SCCS: could not be stat'd.
-# . (device 2067, inode 3933603): 14 files, no impossibilities.
+# . (device 2067, inode 3933603): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 3 directories.
+# 15 files, no impossibilities in 3 directories.
 
+ 
 # Implicit Rules
 
 %: %,v
@@ -311,7 +312,6 @@ depend:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 129):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
- 
 
 default_target: all
 #  Phony target (prerequisite of .PHONY).
@@ -362,7 +362,7 @@ Source/Helper/Apt.s: Source/Helper/Apt.cpp.s
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 13:42:29.81459626
+#  Last modified 2022-05-16 18:21:16.511575075
 #  File has been updated.
 #  Successfully updated.
 
@@ -501,9 +501,9 @@ all: cmake_check_build_system
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 102):
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/UrukStore/CMakeFiles /home/lucius/Desktop/UrukStore//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles /home/lucius/Desktop/Uruk-Store//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/UrukStore/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles 0
 
 help:
 #  Phony target (prerequisite of .PHONY).
@@ -567,6 +567,7 @@ Source/Helper/Apt.cpp.o:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 178):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Apt.cpp.o
 
@@ -602,7 +603,6 @@ cmake_check_build_system:
 # automatic
 # | := 
 # variable set hash-table stats:
- 
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  recipe to execute (from 'Makefile', line 285):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
@@ -680,9 +680,9 @@ Source/Helper/Apt.cpp.s:
 # strcache buffers: 1 (0) / strings = 71 / storage = 1034 B / avg = 14 B
 # current buf: size = 8162 B / used = 1034 B / count = 71 / avg = 14 B
 
-# strcache performance: lookups = 265 / hit rate = 73%
+# strcache performance: lookups = 266 / hit rate = 73%
 # hash-table stats:
-# Load=71/8192=1%, Rehash=0, Collisions=0/265=0%
-# Finished Make data base on Mon May 16 17:42:55 2022
+# Load=71/8192=1%, Rehash=0, Collisions=0/266=0%
+# Finished Make data base on Mon May 16 23:26:17 2022
 
  
