@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 14 13:59:14 2022
+# Make data base, printed on Mon May 16 17:42:55 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b8944501-5e97-4021-a2f2-bad5317608a2.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d905876f-8d6b-4e68-8d04-2b3256066e0e.sock
 # environment
 VSCODE_CWD = /home/lucius/Desktop
 # default
@@ -77,7 +77,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-pX4YBOocjdzJ/agent.1466
+SSH_AUTH_SOCK = /tmp/ssh-DgkYuhBRXgwX/agent.1231
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -97,7 +97,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 8978
+VSCODE_PID = 69473
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -107,7 +107,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 70)
 CMAKE_SOURCE_DIR = /home/lucius/Desktop/UrukStore
 # environment
-SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1832,unix/lucius:/tmp/.ICE-unix/1832
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1580,unix/lucius:/tmp/.ICE-unix/1580
 # automatic
 *F = $(notdir $*)
 # environment
@@ -205,7 +205,7 @@ SNAP_DATA = /var/snap/code/96
 # environment
 SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
 # environment
-SSH_AGENT_PID = 1549
+SSH_AGENT_PID = 1312
 # makefile (from 'Makefile', line 44)
 MAKESILENT = -s
 # environment
@@ -293,7 +293,6 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 %.hpux_make_needs_suffix_list:
 
- 
 # 6 implicit rules, 0 (0.0%) terminal.
 # Files
 
@@ -312,6 +311,7 @@ depend:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 129):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+ 
 
 default_target: all
 #  Phony target (prerequisite of .PHONY).
@@ -583,7 +583,6 @@ cmake_check_build_system:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
 #  File does not exist.
- 
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -603,6 +602,7 @@ cmake_check_build_system:
 # automatic
 # | := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  recipe to execute (from 'Makefile', line 285):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
@@ -683,6 +683,6 @@ Source/Helper/Apt.cpp.s:
 # strcache performance: lookups = 265 / hit rate = 73%
 # hash-table stats:
 # Load=71/8192=1%, Rehash=0, Collisions=0/265=0%
-# Finished Make data base on Sat May 14 13:59:14 2022
+# Finished Make data base on Mon May 16 17:42:55 2022
 
  

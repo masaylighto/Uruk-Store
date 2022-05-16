@@ -10,11 +10,8 @@ private:
    
 public:
     /* this constructor will pass its parameter to window base class */
-    MainWindow(std::string PathToGladeFile);
-    ~MainWindow(){
-
-        
-    };
+    MainWindow(std::string PathToGladeFile,std::string WindowName);
+    ~MainWindow()=default;
    
 };
 
