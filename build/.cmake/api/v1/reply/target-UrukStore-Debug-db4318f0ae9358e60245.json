@@ -206,7 +206,9 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -343,7 +345,9 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -358,7 +362,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Source/Helper/Apt.cpp",
+			"path" : "Source/Base/Component.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Source/Base/Page.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -377,6 +387,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Source/Pages/MainWindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Source/Helper/Apt.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

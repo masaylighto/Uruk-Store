@@ -1,42 +1,36 @@
 #include <gtkmm.h>
+#include "Component.h"
 #include<iostream>
+#include<string>
 #include "../Helper/Variety.h"
 #ifndef H_Window
 #define H_Window
 /*
 Base Class For Gtk Window
 */
-class Window
+class Window:public Component
 {
 private:
-   //This Fill Will Hold The Builder Instance So We Can Extract Element From It
-   Glib::RefPtr<Gtk::Builder> _Builder ;
+
    Glib::RefPtr<Gtk::Window>  _Window  ;
-   /*
-   read glade file 
-   */
-   void InitBuilder(std::string PathToGladeFile);
-   /*
-   extract window from builder
-   */
-   void ExtractWindow(std::string WindowName);
+
    
 public:
     /*    
         the constructor will receive the path to the glade file then call the InitBuilder 
         also it will receive the name of the window and call Extract Window   
     */
-    Window(std::string PathToGladeFile,std::string WindowName);
-    ~Window();
-    /*
-    Extract Widget from Builder
-    */
-    template<class Widget> Glib::RefPtr<Widget> ExtractWidget (std::string WidgetName);
+   
+     Window(std::string PathToGladeFile,std::string WindowName);
+    ~Window()=default;
+ 
     /*
     show window
     */
     Glib::RefPtr<Gtk::Window>  GetWindow();
     bool LoadCssFile(std::string PathToCssFile);
+
+
 };
 
 
