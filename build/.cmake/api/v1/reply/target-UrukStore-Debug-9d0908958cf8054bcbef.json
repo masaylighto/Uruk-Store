@@ -358,6 +358,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "Source/Helper/Apt.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "Source/Base/Window.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -371,12 +377,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Source/Pages/MainWindow.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Source/Helper/Apt.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
