@@ -36,6 +36,7 @@ public:
     show window
     */
     Glib::RefPtr<Gtk::Window>  GetWindow();
+    bool LoadCssFile(std::string PathToCssFile);
 };
 
 

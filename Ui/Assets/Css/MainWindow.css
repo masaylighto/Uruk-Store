@@ -2,7 +2,7 @@
 background-image: url("../Icons/Bg.png");
 }
 .bg-Trans{
-    background: transparent;
+    background-color: rgba(255, 255, 255, 0);
 }
 .Rounded{
     border-radius: 10px;
@@ -30,4 +30,8 @@ border: none;
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.5;
+}
+.Rounded{
+    border-radius: 20px;
+
 }

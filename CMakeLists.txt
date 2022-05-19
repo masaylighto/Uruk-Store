@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.18)
 find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
-set( SOURCE_FILES "Source/main.cpp" "Source/Base/Window.cpp" "Source/Helper/Variety.cpp" "Source/Pages/MainWindow.cpp" "Source/Helper/Apt.cpp")
+set( SOURCE_FILES "Source/main.cpp" "Source/Helper/Apt.cpp" "Source/Base/Window.cpp" "Source/Helper/Variety.cpp" "Source/Pages/MainWindow.cpp" "Source/Helper/Apt.cpp")
 add_executable(UrukStore ${SOURCE_FILES})
 link_directories(    ${GTKMM_LIBRARY_DIRS}  )
 
