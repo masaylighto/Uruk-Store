@@ -1,17 +1,14 @@
-#include <gtkmm.h>
-#include<iostream>
-#include "../Helper/Variety.h"
+#include"Component.h"
 #ifndef H_Page
 #define H_Page
-class page
+class Page: public Component
 {
 private:
-    //This Fill Will Hold The Builder Instance So We Can Extract Element From It
-   Glib::RefPtr<Gtk::Builder> _Builder ;
-   Glib::RefPtr<Gtk::Widget>  _TopWidget  ;
+  
 public:
-    page(/* args */);
-    ~page();
+    
+    Page(std::string PathToGladeFile);    
+    ~Page()=default;;
 };
 
 

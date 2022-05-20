@@ -17,7 +17,7 @@ private:
    
 public:
     /*    
-        the constructor will receive the path to the glade file then call the InitBuilder 
+        the constructor will receive the path to the glade file then call the LoadGladeFile 
         also it will receive the name of the window and call Extract Window   
     */
    
