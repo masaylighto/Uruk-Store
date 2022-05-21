@@ -18,8 +18,7 @@ AppBox::AppBox():Component("Ui/Pages/AppBox.glade")
 }
  void AppBox::SetName(std::string Name)
  {
-
-     _NameLabel->set_name("Name");
+     _NameLabel->set_text(Name);
  }
  void AppBox::ExtractContainer(){
 
