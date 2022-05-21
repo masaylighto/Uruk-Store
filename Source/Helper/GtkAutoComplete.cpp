@@ -7,8 +7,9 @@
         AutoCompleteList = Gtk::ListStore::create(Row);
         for (int Index = 0; Index < List.size(); Index++)
         {
-            Gtk::TreeModel::Row row=  *(AutoCompleteList->append());
-            row->set_value(0,List[Index]);
+           //set the value to the first column ||  the auto complete model may hold more than one column so we specify which one we one
+            AutoCompleteList->append()->set_value(0,List[Index]);
+            
         }
     }
     /*
@@ -16,10 +17,14 @@
     */
     void AutoComplete::CreateEntryCompletionObject()
     {
-        EntryCompletion =   Gtk::EntryCompletion::create();
+        EntryCompletion = Gtk::EntryCompletion::create();
+        //set the model that hold the auto completion data
         EntryCompletion->set_model(AutoCompleteList);
+        //set the column that will be used to auto complete || the auto complete model may hold more than one column so we specify which one we one
         EntryCompletion->set_text_column(Row.Name);
+        //minimum length of character to show auto complete
         EntryCompletion->set_minimum_key_length(1);
+        //is auto complete popup enabled 
         EntryCompletion->set_popup_completion(true);
     }
     Glib::RefPtr<Gtk::EntryCompletion> AutoComplete::GetAutoCompleteObject()
