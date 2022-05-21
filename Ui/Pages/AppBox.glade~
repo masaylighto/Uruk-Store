@@ -2,16 +2,18 @@
 <!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkBox">
+  <object class="GtkBox" id="AppBox">
     <property name="width-request">200</property>
     <property name="height-request">200</property>
     <property name="visible">True</property>
     <property name="can-focus">False</property>
+    <property name="halign">center</property>
+    <property name="valign">center</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkLabel">
+      <object class="GtkLabel" id="AppName">
         <property name="height-request">40</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
@@ -29,6 +31,9 @@
         <property name="can-focus">False</property>
         <property name="hexpand">True</property>
         <property name="vexpand">True</property>
+        <style>
+          <class name="Bg-white-Trans"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -37,8 +42,8 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton">
-        <property name="label" translatable="yes">button</property>
+      <object class="GtkButton" id="ShowBtn">
+        <property name="label" translatable="yes">Show</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">True</property>
@@ -55,7 +60,7 @@
       </packing>
     </child>
     <style>
-      <class name="Bg-white"/>
+      <class name="Bg-white-Trans"/>
       <class name="Rounded"/>
     </style>
   </object>
