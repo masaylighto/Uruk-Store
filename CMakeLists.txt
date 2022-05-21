@@ -1,6 +1,7 @@
 project(UrukStore)
 cmake_minimum_required(VERSION 3.18)
 find_package(PkgConfig REQUIRED)
+#set (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 set( SOURCE_FILES "Source/main.cpp"  "Source/Base/Component.cpp" "Source/Base/Page.cpp"  "Source/Base/Window.cpp" "Source/Helper/Variety.cpp" "Source/Helper/GtkAutoComplete.cpp" "Source/Pages/HomePage.cpp" "Source/Pages/MainWindow.cpp" "Source/Helper/Apt.cpp")

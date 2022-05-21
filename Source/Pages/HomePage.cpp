@@ -1,6 +1,6 @@
 #include"../../Headers/Pages/HomePage.h"
 
-HomePage::HomePage():Page("../Ui/Pages/HomePage.glade")
+HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
 {
    _TopBox    = ExtractRefPtrWidget<Gtk::Box>("TopBox");
    _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");

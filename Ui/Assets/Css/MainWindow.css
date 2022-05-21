@@ -1,5 +1,5 @@
 .bg-Blueish{
-background-image: url("../Ui/Assets/Icons/Bg.png");
+background-image: url("Ui/Assets/Icons/Bg.png");
 }
 .bg-Trans{
     background-color: rgba(255, 255, 255, 0);
@@ -23,13 +23,13 @@ border: none;
     background: white;
 }
 .SettingsIcon{
-    background: url("../Ui/Assets/Icons/Settings.svg");
+    background: url("Ui/Assets/Icons/Settings.svg");
     background-repeat: no-repeat;
     background-size: contain;
 
 }
 .HomeIcon{
-    background: url("../Ui/Assets/Icons/Home.png");
+    background: url("Ui/Assets/Icons/Home.png");
     background-repeat: no-repeat;
     background-size: contain;
     
