@@ -37,6 +37,7 @@
                 "/usr/include/atkmm-1.6",
                 "/usr/include/gtkmm-3.0",
                 "/usr/include/gtkmm-3.0",
+                "/usr/include/gtkmm-3.0",
                 "/usr/include/gtkmm-3.0"
             ],
             "defines": [],
@@ -44,7 +45,7 @@
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-x64",
-            "configurationProvider": "ms-vscode.cmake-tools"
+            "configurationProvider": "ms-vscode.cpptools"
         }
     ],
     "version": 4

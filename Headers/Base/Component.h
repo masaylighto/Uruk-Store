@@ -14,6 +14,8 @@ class Component
 private:
    //This Fill Will Hold The Builder Instance So We Can Extract Element From It
    Glib::RefPtr<Gtk::Builder> _Builder ;
+
+   
    /*
    read glade file into Gtk::Builder
    */

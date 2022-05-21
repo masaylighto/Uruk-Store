@@ -7,9 +7,8 @@
         AutoCompleteList = Gtk::ListStore::create(Row);
         for (int Index = 0; Index < List.size(); Index++)
         {
-           //set the value to the first column ||  the auto complete model may hold more than one column so we specify which one we one
+           //set the value to the first column at index 0 ||  the auto complete model may hold more than one column so we specify which one we one
             AutoCompleteList->append()->set_value(0,List[Index]);
-            
         }
     }
     /*

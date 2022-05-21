@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkBox" id="AppBox">
+  <object class="GtkBox">
     <property name="width-request">200</property>
     <property name="height-request">200</property>
     <property name="visible">True</property>
@@ -11,7 +11,7 @@
     <property name="vexpand">True</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkLabel" id="AppName">
+      <object class="GtkLabel">
         <property name="height-request">40</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
@@ -37,8 +37,8 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="ShowBtn">
-        <property name="label" translatable="yes">Show</property>
+      <object class="GtkButton">
+        <property name="label" translatable="yes">button</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">True</property>
