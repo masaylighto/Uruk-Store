@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 19 13:44:18 2022
+# Make data base, printed on Sat May 21 15:11:35 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-17865b2a-7cff-4f57-83d1-6900db55ceb6.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2dcfb07e-eda3-4a56-b8fa-d056b6a55ffb.sock
 # environment
 VSCODE_CWD = /home/lucius/Desktop
 # default
@@ -77,7 +77,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-aUnu3a4ablKR/agent.1233
+SSH_AUTH_SOCK = /tmp/ssh-VLaIFJdOP8HD/agent.1270
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -95,7 +95,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2172
+VSCODE_PID = 3841
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -103,7 +103,7 @@ XDG_SESSION_TYPE = x11
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1599,unix/lucius:/tmp/.ICE-unix/1599
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1426,unix/lucius:/tmp/.ICE-unix/1426
 # automatic
 *F = $(notdir $*)
 # environment
@@ -197,7 +197,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
 # environment
-SSH_AGENT_PID = 1300
+SSH_AGENT_PID = 1326
 # environment
 _ = /snap/code/97/usr/share/code/code
 # environment
@@ -298,6 +298,7 @@ makefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
+ 
 #  Failed to be updated.
 
 # Not a target:
@@ -305,7 +306,6 @@ GNUmakefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
 #  Failed to be updated.
 
 # files hash-table stats:
@@ -322,6 +322,6 @@ GNUmakefile:
 # strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Thu May 19 13:44:18 2022
+# Finished Make data base on Sat May 21 15:11:35 2022
 
  

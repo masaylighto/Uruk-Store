@@ -1,5 +1,5 @@
 .bg-Blueish{
-background-image: url("../Icons/Bg.png");
+background-image: url("../Ui/Assets/Icons/Bg.png");
 }
 .bg-Trans{
     background-color: rgba(255, 255, 255, 0);
@@ -14,24 +14,38 @@ background-image: url("../Icons/Bg.png");
 border: none;
 }
 .Bg-white-Trans{
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
+}
+.Bg-white-Barley-Trans{
+    background: rgba(255, 255, 255, 0.89);
 }
 .Bg-white{
     background: white;
 }
 .SettingsIcon{
-    background: url("../Icons/Settings.svg");
+    background: url("../Ui/Assets/Icons/Settings.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.5;
+
 }
 .HomeIcon{
-    background: url("../Icons/Home.png");
+    background: url("../Ui/Assets/Icons/Home.png");
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.5;
+    
 }
 .Rounded{
     border-radius: 20px;
-
+}
+.Bg-Gradient-Bluish{
+    background:  linear-gradient(to left,#e5f3f9 ,#eff7fa);
+}
+.Bg-Gradient-icy{
+    background:  linear-gradient(to top,#d3edf7,#e0f2f8  ,#edf7fa  ,#edfbff ,#edf7fa );
+}
+.text-black{
+    color: black;
+}
+.Opacity-80{
+opacity: 1
 }

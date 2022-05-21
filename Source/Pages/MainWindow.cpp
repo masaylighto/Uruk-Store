@@ -3,17 +3,22 @@
 
 MainWindow::MainWindow(std::string PathToGladeFile,std::string WindowName):Window(PathToGladeFile,WindowName)
 {
-    InitPagesFrame();
+   InitPagesFrame();
     LoadHomePage();
 };
+void Set(Gtk::Widget &v){
+
+}
 void MainWindow::LoadHomePage(){
     //create instance from HomePage
     _HomePage = std::shared_ptr<HomePage>( new HomePage());
     //Get The TopWidget From HomePage And Insert It into _PagesFrame So It the Page Will Be Displayed
      auto Box= _HomePage.get()->GetTopWidget().get();
-    _PagesFrame->add(*Box);
+     _PagesFrame.get()->add(*Box);
+ 
+    
 }
 
 void MainWindow::InitPagesFrame(){
-    _PagesFrame = ExtractWidget<Gtk::Frame>("PagesFrame");
+    _PagesFrame = ExtractRefPtrWidget<Gtk::Frame>("PagesFrame");
 }

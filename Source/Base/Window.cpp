@@ -3,7 +3,7 @@
 
 Window::Window(std::string PathToGladeFile,std::string WindowName):Component(PathToGladeFile)
 {  
-    _Window = ExtractWidget<Gtk::Window>(WindowName);
+    _Window = ExtractRefPtrWidget<Gtk::Window>(WindowName);
 }
 
 bool Window::LoadCssFile(std::string PathToCssFile)

@@ -13,7 +13,7 @@ Execute Shell Command And Read The output using Pipe
 */
 std::string ExecuteAndRead(std::string command);
 /*
-execute "apt-cache pkgnames  | head -n {count}" and return the output"
+execute "apt-cache pkgnames  | head -n {count}" and return the output -1 will return all"
 */
 std::vector<std::string> GetAptPackages(int Count);
 /*

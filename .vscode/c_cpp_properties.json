@@ -35,6 +35,8 @@
                 "/usr/lib/x86_64-linux-gnu/gtkmm-3.0/include",
                 "/usr/lib/x86_64-linux-gnu/atkmm-1.6/include",
                 "/usr/include/atkmm-1.6",
+                "/usr/include/gtkmm-3.0",
+                "/usr/include/gtkmm-3.0",
                 "/usr/include/gtkmm-3.0"
             ],
             "defines": [],
