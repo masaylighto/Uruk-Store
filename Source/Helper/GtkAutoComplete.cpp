@@ -18,6 +18,9 @@
     {
         EntryCompletion =   Gtk::EntryCompletion::create();
         EntryCompletion->set_model(AutoCompleteList);
+        EntryCompletion->set_text_column(Row.Name);
+        EntryCompletion->set_minimum_key_length(1);
+        EntryCompletion->set_popup_completion(true);
     }
     Glib::RefPtr<Gtk::EntryCompletion> AutoComplete::GetAutoCompleteObject()
     {
