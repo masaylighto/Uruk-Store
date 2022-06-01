@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<string>
-#include"../Helper/Variety.h"
+#include"../../../Packages/Varity/Headers/FileMethod.h"
 
 #ifndef H_Component
 #define H_Component

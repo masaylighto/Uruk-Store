@@ -1,4 +1,3 @@
-#include"../Headers/Helper/Apt.h"
 #include"../Headers/Pages/MainWindow.h"
 
 int main(int argc,char ** argv){

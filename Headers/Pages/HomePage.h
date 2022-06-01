@@ -1,7 +1,7 @@
 
 #include "../Base/Page.h"
 #include"../Helper/GtkAutoComplete.h"
-#include"../Helper/Apt.h"
+#include "../../Packages/Apt/Headers/Apt.h"
 #include "../Component/AppBox.h"
 #ifndef H_HomePage
 #define H_HomePage

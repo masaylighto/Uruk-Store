@@ -6,9 +6,10 @@
 #include <memory>
 #include <stdexcept>
 #include <vector>
-#include "Variety.h"
+#include "../../Varity/Headers/FileMethod.h"
+#include "../../Varity/Headers/StringMethod.h"
 #include <filesystem>
-#include <gtkmm.h>
+
 #ifndef H_Apt
 #define H_Apt
 struct Package
