@@ -11,17 +11,17 @@ std::vector<std::string>  SplitString(const std::string & OriginalString,const s
     std::vector<std::string> Parts;
     //when we gonna split we will need a place where we collect the current part character so we could add it into the vector ,because we are reading the original string as char after char,
     std::string Part;
-    //current Character 
-    std::string Characters;
+    //Used To Compare with Delimiter
+    std::string MatchCharacters;
     //so we could used in substring , for the sake of matching 
     int DelimiterWidth=Delimiter.length();
     // loop through all character in the string
     for (int Index = 0; Index < OriginalString.length(); Index++)
     {  
-         Characters=OriginalString.substr(Index,DelimiterWidth);
+         MatchCharacters=OriginalString.substr(Index,DelimiterWidth);
          //check if the character equal to delimiter 
          //if it is then consider the character in the last iterations since the last time we hit the condition all of them are separated part we gonna ad it into the vec
-        if (Characters==Delimiter)
+        if (MatchCharacters==Delimiter)
         {
             //adding the part into vector
            Parts.push_back(Part);
