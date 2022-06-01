@@ -2,7 +2,7 @@
 #include"../Headers/Pages/MainWindow.h"
 
 int main(int argc,char ** argv){
-    
+
     //Create Gtk Application
     auto App=Gtk::Application::create(argc,argv,"UrukStore");    
     //Create The Main Window 

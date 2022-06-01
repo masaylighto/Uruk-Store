@@ -1,0 +1,959 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun  1 11:10:20 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6a86cc6a-2d7e-4417-88bc-08ad2e3c9479.sock
+# environment
+VSCODE_CWD = /home/lucius/Desktop
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/lucius/Desktop/Uruk-Store
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /home/lucius/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/lucius/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/lucius/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile (from 'Makefile', line 61)
+CMAKE_COMMAND = /usr/bin/cmake
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/lucius/Desktop/Uruk-Store
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-EiFaevaY3OZg/agent.1272
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XCURSOR_THEME = Layan-white-cursors
+# environment
+XDG_SESSION_DESKTOP = KDE
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# makefile (from 'Makefile', line 73)
+CMAKE_BINARY_DIR = /home/lucius/Desktop/Uruk-Store
+# environment
+SNAP_REEXEC = 
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 2030
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile (from 'Makefile', line 70)
+CMAKE_SOURCE_DIR = /home/lucius/Desktop/Uruk-Store
+# environment
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1427,unix/lucius:/tmp/.ICE-unix/1427
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 58)
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+PLATFORMIO_CALLER = vscode
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+SNAP_COOKIE = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
+# environment
+PATH = /home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+SNAP_USER_COMMON = /home/lucius/snap/code/common
+# environment
+SNAP = /snap/code/97
+# environment
+SNAP_REVISION = 97
+# environment
+SNAP_REAL_HOME = /home/lucius
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# environment
+KDE_APPLICATIONS_AS_SCOPE = 1
+# environment
+XDG_SEAT = seat0
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+XDG_CURRENT_DESKTOP = KDE
+# environment
+LS_COLORS = 
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = plasma
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = KDE
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+QT_SCREEN_SCALE_FACTORS = eDP-1=1.25;DP-1=1.25;HDMI-1=1.25;DP-2=1.25;HDMI-2=1.25;DP-3=1.25;
+# makefile (from 'Makefile', line 67)
+EQUALS = =
+# environment
+LOGNAME = lucius
+# environment
+PLATFORMIO_PATH = /home/lucius/.platformio/python3/bin:/home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
+# environment
+SNAP_ARCH = amd64
+# environment
+XDG_VTNR = 7
+# makefile
+.DEFAULT_GOAL := default_target
+# makefile (from 'Makefile', line 64)
+RM = /usr/bin/cmake -E rm -f
+# environment
+DISPLAY = :0
+# environment
+USER = lucius
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# environment
+KDE_SESSION_UID = 1000
+# environment
+DISABLE_WAYLAND = 1
+# environment
+SNAP_DATA = /var/snap/code/97
+# environment
+SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
+# environment
+SSH_AGENT_PID = 1340
+# makefile (from 'Makefile', line 44)
+MAKESILENT = -s
+# environment
+_ = /snap/code/97/usr/share/code/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/lucius/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PLATFORMIO_IDE = 2.4.3
+# environment
+GTK2_RC_FILES = /etc/gtk-2.0/gtkrc:/home/lucius/.gtkrc-2.0:/home/lucius/.config/gtkrc-2.0
+# environment
+HOME = /home/lucius
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c964362a-1.67.2-main.sock
+# environment
+SNAP_NAME = code
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
+# environment
+XDG_SESSION_ID = 3
+# environment
+XCURSOR_SIZE = 24
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_VERSION = c3511e6c
+# default
+SUFFIXES := 
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+KDE_SESSION_VERSION = 5
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+KDE_FULL_SESSION = true
+# environment
+SNAP_USER_DATA = /home/lucius/snap/code/97
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# variable set hash-table stats:
+# Load=127/1024=12%, Rehash=0, Collisions=4/166=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# RCS: could not be stat'd.
+# SCCS: could not be stat'd.
+# . (device 2067, inode 3933603): 16 files, no impossibilities.
+
+# 16 files, no impossibilities in 3 directories.
+
+ 
+# Implicit Rules
+
+%: %,v
+
+%: RCS/%
+
+%: RCS/%,v
+
+%: SCCS/s.%
+
+%: s.%
+
+%.hpux_make_needs_suffix_list:
+
+# 6 implicit rules, 0 (0.0%) terminal.
+# Files
+
+Source/Pages/HomePage.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 358):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/HomePage.cpp.s
+
+Source/Base/Window.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 205):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Window.cpp.o
+
+Source/Component/AppBox.o: Source/Component/AppBox.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+depend:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 129):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+
+default_target: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/main.s: Source/main.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Pages/MainWindow.i: Source/Pages/MainWindow.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Variety.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 322):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Variety.cpp.i
+
+Source/main.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 403):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.i
+
+edit_cache/fast: edit_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+UrukStore: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 137):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UrukStore
+
+Source/Helper/Apt.s: Source/Helper/Apt.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Page.i: Source/Base/Page.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-22 00:22:27.262821198
+#  File has been updated.
+#  Successfully updated.
+
+rebuild_cache:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 80):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+
+Source/Base/Page.s: Source/Base/Page.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Variety.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 313):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Variety.cpp.o
+
+Source/Helper/GtkAutoComplete.s: Source/Helper/GtkAutoComplete.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Window.s: Source/Base/Window.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Component.i: Source/Base/Component.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.SILENT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 109):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+
+cmake_force:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Apt.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 268):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Apt.cpp.i
+
+preinstall/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 124):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+
+Source/Pages/HomePage.i: Source/Pages/HomePage.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/main.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 412):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.s
+
+edit_cache:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 91):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+
+Source/Base/Component.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 151):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Component.cpp.o
+
+Source/Helper/Variety.s: Source/Helper/Variety.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Pages/HomePage.s: Source/Pages/HomePage.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+rebuild_cache/fast: rebuild_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.hpux_make_needs_suffix_list:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Source/main.i: Source/main.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Pages/MainWindow.o: Source/Pages/MainWindow.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Window.i: Source/Base/Window.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Pages/MainWindow.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 367):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/MainWindow.cpp.o
+
+Source/main.o: Source/main.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+preinstall: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 119):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+
+Source/Helper/GtkAutoComplete.i: Source/Helper/GtkAutoComplete.cpp.i
+ 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Source/Helper/Variety.o: Source/Helper/Variety.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+all: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 102):
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles /home/lucius/Desktop/Uruk-Store//CMakeFiles/progress.marks
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles 0
+
+help:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 417):
+	@echo "The following are some of the valid targets for this Makefile:"
+	@echo "... all (the default if no target is provided)"
+	@echo "... clean"
+	@echo "... depend"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... UrukStore"
+	@echo "... Source/Base/Component.o"
+	@echo "... Source/Base/Component.i"
+	@echo "... Source/Base/Component.s"
+	@echo "... Source/Base/Page.o"
+	@echo "... Source/Base/Page.i"
+	@echo "... Source/Base/Page.s"
+	@echo "... Source/Base/Window.o"
+	@echo "... Source/Base/Window.i"
+	@echo "... Source/Base/Window.s"
+	@echo "... Source/Component/AppBox.o"
+	@echo "... Source/Component/AppBox.i"
+	@echo "... Source/Component/AppBox.s"
+	@echo "... Source/Helper/Apt.o"
+	@echo "... Source/Helper/Apt.i"
+	@echo "... Source/Helper/Apt.s"
+	@echo "... Source/Helper/GtkAutoComplete.o"
+	@echo "... Source/Helper/GtkAutoComplete.i"
+	@echo "... Source/Helper/GtkAutoComplete.s"
+	@echo "... Source/Helper/Variety.o"
+	@echo "... Source/Helper/Variety.i"
+	@echo "... Source/Helper/Variety.s"
+	@echo "... Source/Pages/HomePage.o"
+	@echo "... Source/Pages/HomePage.i"
+	@echo "... Source/Pages/HomePage.s"
+	@echo "... Source/Pages/MainWindow.o"
+	@echo "... Source/Pages/MainWindow.i"
+	@echo "... Source/Pages/MainWindow.s"
+	@echo "... Source/main.o"
+	@echo "... Source/main.i"
+	@echo "... Source/main.s"
+
+Source/Component/AppBox.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 250):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Component/AppBox.cpp.s
+
+Source/Base/Component.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 160):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Component.cpp.i
+
+clean/fast: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Component/AppBox.i: Source/Component/AppBox.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/GtkAutoComplete.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 304):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/GtkAutoComplete.cpp.s
+
+Source/Helper/Variety.i: Source/Helper/Variety.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Component.s: Source/Base/Component.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Component/AppBox.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 241):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Component/AppBox.cpp.i
+
+Source/Helper/GtkAutoComplete.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 286):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/GtkAutoComplete.cpp.o
+
+Source/Pages/HomePage.o: Source/Pages/HomePage.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Pages/HomePage.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 349):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/HomePage.cpp.i
+
+Source/Component/AppBox.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 232):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Component/AppBox.cpp.o
+
+.NOTPARALLEL:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Source/Helper/Apt.o: Source/Helper/Apt.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Window.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 214):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Window.cpp.i
+
+Source/Helper/GtkAutoComplete.o: Source/Helper/GtkAutoComplete.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Component.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 169):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Component.cpp.s
+
+Source/Base/Window.o: Source/Base/Window.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Apt.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 259):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Apt.cpp.o
+
+Source/Pages/MainWindow.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 385):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/MainWindow.cpp.s
+
+cmake_check_build_system:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := cmake_check_build_system
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  recipe to execute (from 'Makefile', line 465):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+
+Source/Base/Component.o: Source/Base/Component.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+UrukStore/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 142):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/build
+
+Source/Base/Page.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 187):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Page.cpp.i
+
+Source/Base/Page.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 178):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Page.cpp.o
+
+Source/Component/AppBox.s: Source/Component/AppBox.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+ 
+#  File has not been updated.
+
+Source/main.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 394):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.o
+
+Source/Pages/HomePage.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 340):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/HomePage.cpp.o
+
+.SUFFIXES: .hpux_make_needs_suffix_list
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Source/Base/Page.o: Source/Base/Page.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Base/Window.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 223):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Window.cpp.s
+
+Source/Base/Page.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 196):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Page.cpp.s
+
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend UrukStore UrukStore/fast Source/Base/Component.o Source/Base/Component.cpp.o Source/Base/Component.i Source/Base/Component.cpp.i Source/Base/Component.s Source/Base/Component.cpp.s Source/Base/Page.o Source/Base/Page.cpp.o Source/Base/Page.i Source/Base/Page.cpp.i Source/Base/Page.s Source/Base/Page.cpp.s Source/Base/Window.o Source/Base/Window.cpp.o Source/Base/Window.i Source/Base/Window.cpp.i Source/Base/Window.s Source/Base/Window.cpp.s Source/Component/AppBox.o Source/Component/AppBox.cpp.o Source/Component/AppBox.i Source/Component/AppBox.cpp.i Source/Component/AppBox.s Source/Component/AppBox.cpp.s Source/Helper/Apt.o Source/Helper/Apt.cpp.o Source/Helper/Apt.i Source/Helper/Apt.cpp.i Source/Helper/Apt.s Source/Helper/Apt.cpp.s Source/Helper/GtkAutoComplete.o Source/Helper/GtkAutoComplete.cpp.o Source/Helper/GtkAutoComplete.i Source/Helper/GtkAutoComplete.cpp.i Source/Helper/GtkAutoComplete.s Source/Helper/GtkAutoComplete.cpp.s Source/Helper/Variety.o Source/Helper/Variety.cpp.o Source/Helper/Variety.i Source/Helper/Variety.cpp.i Source/Helper/Variety.s Source/Helper/Variety.cpp.s Source/Pages/HomePage.o Source/Pages/HomePage.cpp.o Source/Pages/HomePage.i Source/Pages/HomePage.cpp.i Source/Pages/HomePage.s Source/Pages/HomePage.cpp.s Source/Pages/MainWindow.o Source/Pages/MainWindow.cpp.o Source/Pages/MainWindow.i Source/Pages/MainWindow.cpp.i Source/Pages/MainWindow.s Source/Pages/MainWindow.cpp.s Source/main.o Source/main.cpp.o Source/main.i Source/main.cpp.i Source/main.s Source/main.cpp.s help cmake_check_build_system
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Source/Pages/MainWindow.s: Source/Pages/MainWindow.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Variety.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 331):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Variety.cpp.s
+
+Source/Pages/MainWindow.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 376):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Pages/MainWindow.cpp.i
+
+Source/Helper/Apt.i: Source/Helper/Apt.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Helper/Apt.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 277):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/Apt.cpp.s
+
+Source/Helper/GtkAutoComplete.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 295):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/GtkAutoComplete.cpp.i
+
+# files hash-table stats:
+# Load=83/1024=8%, Rehash=0, Collisions=14/317=4%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 108 / storage = 2010 B / avg = 18 B
+# current buf: size = 8162 B / used = 2010 B / count = 108 / avg = 18 B
+
+# strcache performance: lookups = 465 / hit rate = 76%
+# hash-table stats:
+# Load=108/8192=1%, Rehash=0, Collisions=0/465=0%
+# Finished Make data base on Wed Jun  1 11:10:20 2022
+
+ 

@@ -1,5 +1,6 @@
 project(UrukStore)
 cmake_minimum_required(VERSION 3.18)
+set(CMAKE_CXX_STANDARD 17)
 find_package(PkgConfig REQUIRED)
 #set (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_BUILD_TYPE Debug)
