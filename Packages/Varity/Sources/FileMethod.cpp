@@ -1,12 +1,32 @@
 #include "../Headers/FileMethod.h"
-std::string ReadFileText(const std::string & FilePath)
+
+
+char * ReadFileText(const std::string & FilePath,int FileSize)
 {
-    // the code had been taken from https://stackoverflow.com/questions/2912520/read-file-contents-into-a-string-in-c
-    // Streaming Class That Operate on Files
-    std::ifstream File(FilePath);
-    // std::istreambuf_iterator read the characters from basic stream buffer
-    // we call the Range constructor of string  Which take (InputIterator first, InputIterator last)
-    // as Paramater
-    std::string FileContent(std::istreambuf_iterator<char>(File),{});
+    
+    //this part of code doesn't need any type of comment ,it's just so obvious  
+    int FileDescriptor=  open(FilePath.c_str(),O_RDONLY);
+    if (FileDescriptor==-1)
+    {
+         throw std::ifstream::failure(std::strerror(errno));
+    }
+    char * FileContent = new char [FileSize];
+    read(FileDescriptor,FileContent,FileSize);
     return FileContent;
+}
+struct stat GetFileInfo(const std::string & FilePath)
+{
+    struct stat buffer;     
+    //check if the file not exist 
+    if((stat (FilePath.c_str(), &buffer) != 0))
+    {
+        throw std::ifstream::failure("Failed To Read File "+FilePath);
+    }
+    return buffer;
+}
+ bool IsFileExist (const std::string& FilePath) 
+{
+    struct stat buffer;     
+    //check if the file not exist    
+    return (stat (FilePath.c_str(), &buffer) != 0);
 }

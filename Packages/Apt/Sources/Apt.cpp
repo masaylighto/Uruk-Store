@@ -8,7 +8,7 @@ std::vector<std::string> Apt::GetSourcesPaths()
     for (const auto & File : std::filesystem::directory_iterator("/var/lib/apt/lists/"))
     {   
             //get the path from the File information
-            const std::string Path =File.path().string();
+            const std::string & Path = File.path().string();
             //if the file doesn't have deb or .gz in its name 
             //then the file is a source files
             if  (Path.find("deb")!=-1 && Path.find(".gz")==-1 )
@@ -19,67 +19,87 @@ std::vector<std::string> Apt::GetSourcesPaths()
     }
     return SourcesPath;
 }
-Package Apt::ParsePackage(const std::string & Info)
-{
-  ;
-    Package Pkg;
-    //the package info will come as string , its information separated through lines example
-    //package: zzzeeksphinx
-    //Binary: python3-zzzeeksphinx
-    //Version: 1.1.6-1
-    //Maintainer: Debian Python Team <team+python@tracker.debian.org>
-    // as you see, so we split the string into lines
-    const std::vector<std::string> Lines = SplitString(Info,"\n");
-    //loop on every line
-    for (int Index = 0; Index < Lines.size(); Index++)
-    {    //Get the line   
-         const std::string & Line =  Lines[Index];
-         if (!Line.find(":")==-1)
-         {
-             continue;
-         }
-         
-         //every line will look like this  Package: zzzeeksphinx  so we split on : and in this way the name and the value is separated    
-         const std::vector<std::string> KeyValue = SplitString(Line,": ");
-         // as the Line Value should be like this  Package: zzzeeksphinx
-         //and we separated  with :
-         //then if the count of the KeyValue isn't two then Separation proccess failed 
-         //we skip this iteration 
-         if (KeyValue.size()!=2)
-         {
-             continue;
-         }
-         
-         //we check the name and according to it we store the values into Package Member Variables
-         MapToPackage(Pkg,KeyValue);
-    }   
-    return Pkg;
-}
+
 void Apt::GetSourcePackages(std::vector<Package> & Packages,std::string Path)
 {
+   //this algorithm work as follow
+   //the packages information inside files are structured as follow
+   //key:value
+   //key:value
+   //
+   //key:value
+   //key:value
+   //explanation the package information consist of the info name (key) a colon then the info(value)
+   //between every package there is an empty line
+   //so what we gonna do ? the next
+   //creating two variable one will hold the key, and one will hold the value  
+   std::string  Key,Value;
+    //getting the file information or exactly getting the file size    
+   int FileSize = GetFileInfo(Path).st_size; 
+   //reading the whole file
+   char* SourceFileContent =  ReadFileText(Path,FileSize); 
+   //as there is an empty line between every two packages which represent by \n character
+   //and as every package info end up with \n cause every info take a line
+   //so to indicate start reading new package information
+   //we need to check if we read two \n and that why we Created This Variable IsNewLine
+   //we will store it true if we in the current loop encounter \n so in the next loop if we encounter it 
+   //again then we will know that we are started reading the information of the next package
+   bool IsNewLine=false; 
+   //store the package information of the current loop to add it into the packages vector  
+   Package  PkgInfo; 
+   //store the current character in the loop to minimize dereferencing time     
+   char CurrentChar;
+   //we loop through pointer arithmetics to get rid of indexing time                
+   for (char * IndexingChar = SourceFileContent; * IndexingChar ; IndexingChar++)
+   {    
+        //store the value of the character in the current iteration
+        CurrentChar=*IndexingChar; 
+        //we check if the IsNewLine is set to true and the  CurrentChar equal to \n then 
+        //this is the second \n so we are now reading new package info
+        if (IsNewLine&&(CurrentChar=='\n'))
+        {
+            //add the information of the previous package into the packages vector
+            Packages.push_back(PkgInfo);
+            
+            //set new pointer to prepare for reading the next package
+            PkgInfo= {};
+            continue;
+        }
+        //check if the current char is \n so we know that we are reading new package info 
+        //set it into the IsNewLine to check for \n repetition 
+        if (IsNewLine=(CurrentChar=='\n'))
+        {   
+            //map the package key and value into the package struct    
+            MapToPackage(PkgInfo,Key,Value);
+            //reset the value
+            Value="";
+            continue;
+        }
+        //if the CurrentChar is : then we are now reading the value if not then we are reading the info of the key
+        //key: value 
+        if (CurrentChar==':')
+        {
+            //we set the value value into the key cause we used the value var to collect the character in the loop
+            Key =  Value;
+            //we reset the value of Value var preparing to store the value in the key:Value 
+            Value.clear();
+            
+            continue;
+        }      
+        //store the current character in the Value
+        Value+=CurrentChar;
 
-    //read the sources file content as string
-    std::string SourceFileContent =  ReadFileText(Path);
-    // the package and there information separated from each other with a empty line
-    // so we use \n\n you may wander why two \n if it was one empty line 
-    //simply cause the last line of the package will normally end with \n it self
-    //then come the empty line which is \n so there is two \n
-    std::vector<std::string> PackagesInfo = SplitString(SourceFileContent,"\n\n");
-    //loop through all the package string
-    for (std::string & PackageInfo : PackagesInfo)
-    {
-        //parse them and add them into the Parsed Package Vector
-        Packages.push_back(ParsePackage(PackageInfo));
-    } 
-    
+   }
+   
+  
+   free(SourceFileContent);
 }
-void Apt::MapToPackage(Package & Pkg , const std::vector<std::string> KeyValue)
+void Apt::MapToPackage(Package & Pkg , std::string & Key,std::string & Value)
 {
-    const std::string & Key =KeyValue.at(0);
-    const std::string & Value =KeyValue.at(1);
+    
     if (Key=="Package")
     {
-         Pkg.Name=Value;
+         Pkg.Name=Value.substr(1,Value.length());
     }
     else if (Key=="Version")
     {
@@ -99,22 +119,24 @@ std::vector<Package> Apt::GetPackages(){
     //vector that will hold all the packages information
     std::vector<Package> Packages;
     //Get All Source Files
-    std::vector<std::string>Paths = GetSourcesPaths();
+    std::vector<std::string> Paths = GetSourcesPaths();
+   
     //loop through them 
     for (std::string & Path : Paths)
     {
-        //Package information of the specfied source file and insert them info Packages Vector 
-        GetSourcePackages(Packages,Path);
+        try
+        {
+                
+            //Package information of the specfied source file and insert them info Packages Vector 
+            GetSourcePackages(Packages,Path); 
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+      
+         
     }
     // return the packages
     return Packages;
-}
-std::vector<std::string> Apt::ExtractPackagesName(const std::vector<Package> & Packages)
-{
-    std::vector<std::string> PackagesName;
-    for (const Package  & pkg : Packages )
-    {
-        PackagesName.push_back(pkg.Name);
-    }
-    return PackagesName;
 }

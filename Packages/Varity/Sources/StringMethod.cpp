@@ -13,7 +13,7 @@ std::vector<std::string>  SplitString(const std::string & OriginalString,const s
     // loop through all character in the string
     for (int Index = 0; Index < OriginalString.length(); Index++)
     {  
-         MatchCharacters=OriginalString.substr(Index,DelimiterWidth);
+        MatchCharacters=OriginalString.substr(Index,DelimiterWidth);       
          //check if the character equal to delimiter 
          //if it is then consider the character in the last iterations since the last time we hit the condition all of them are separated part we gonna ad it into the vec
         if (MatchCharacters==Delimiter)
@@ -33,4 +33,18 @@ std::vector<std::string>  SplitString(const std::string & OriginalString,const s
     }
     Parts.push_back(Part);
     return Parts;
+}
+inline bool IsPartialStringExist(const std::string & OriginalString,const std::string & PartialString ,const int StartIndex)
+{   int IndexInPartialString=0;
+    int PartialStringLength=PartialString.size();
+    char * i=  const_cast<char*>(&OriginalString.data()[StartIndex]);
+    i+=StartIndex;   
+    for ( ; *i && IndexInPartialString < PartialStringLength ; i++,IndexInPartialString++)
+    {
+        if (PartialString[IndexInPartialString] != *i)
+        {
+            return false;
+        }        
+    }
+    return true;
 }

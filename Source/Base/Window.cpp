@@ -11,8 +11,8 @@ bool Window::LoadCssFile(std::string PathToCssFile)
     try
     {
         auto Css = Gtk::CssProvider::create();
-
-        Css->load_from_data(ReadFileText(PathToCssFile));
+        struct stat Info= GetFileInfo(PathToCssFile);
+        Css->load_from_data(ReadFileText(PathToCssFile,Info.st_size));
 
         Gtk::StyleContext::add_provider_for_screen(
             Gdk::Screen::get_default(), Css,

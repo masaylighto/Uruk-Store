@@ -2,9 +2,13 @@
 
 
 
-void Component::LoadGladeFile(std::string PathToGladeFile){
-   std::string GladeFileContent= ReadFileText(PathToGladeFile); 
-  _Builder = Gtk::Builder::create_from_string(GladeFileContent);
+void Component::LoadGladeFile(std::string PathToGladeFile)
+{
+    if(IsFileExist(PathToGladeFile))
+    {
+        throw std::ifstream::failure("Failed to load "+PathToGladeFile); 
+    }
+  _Builder = Gtk::Builder::create_from_file(PathToGladeFile);
 }
 Component::Component(std::string PathToGladeFile)
 {   

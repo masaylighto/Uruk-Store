@@ -1,5 +1,6 @@
 #include <gtkmm.h>
-
+#include <chrono>
+#include <thread>
 #include<iostream>
 #include<string>
 #include"../../../Packages/Varity/Headers/FileMethod.h"

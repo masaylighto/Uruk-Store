@@ -32,20 +32,16 @@ class Apt
     and add them to the Packages Vector That Passed As Paramater
     */
     static void GetSourcePackages(std::vector<Package> & Packages,std::string Path);
-    /*
-    this function parse the string that represent the package information
-    */
-    static Package ParsePackage(const std::string & Info);
+
     /*
     Map KeyValue into Package
     */
-    static void MapToPackage(Package & Pkg , const std::vector<std::string> KeyValue); 
+    static void MapToPackage(Package & Pkg , std::string & Key,std::string & Value);
     public:
     /*
     Read Apt Files and Get Data
     */
     static std::vector<Package> GetPackages();
-    static std::vector<std::string> ExtractPackagesName(const std::vector<Package> & Packages);
 };
 
 #endif
