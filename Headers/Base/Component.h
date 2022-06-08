@@ -3,7 +3,7 @@
 #include <thread>
 #include<iostream>
 #include<string>
-#include"../../../Packages/Varity/Headers/FileMethod.h"
+#include"Helper/FileMethod.h"
 
 #ifndef H_Component
 #define H_Component

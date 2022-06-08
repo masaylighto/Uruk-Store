@@ -1,6 +1,0 @@
-project(Helpers)
-cmake_minimum_required(VERSION 3.18)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_BUILD_TYPE Debug)
-set(SOURCE_FILES  "Sources/FileMethod.cpp" "Sources/ShellMethod.cpp" "Sources/StringMethod.cpp")
-add_library(Helpers SHARED ${SOURCE_FILES})

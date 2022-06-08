@@ -1,4 +1,4 @@
-#include"../../Headers/Pages/HomePage.h"
+#include "Pages/HomePage.h"
 
 HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
 {
@@ -7,27 +7,24 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
    _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");
     ExtractAppGrid(); 
     //Get Apt Get Packages and set them to a class member 
-
-    AptPackages=Apt::GetPackages();
+    AptGet =  Apt::Create();
+    
 
    
 
     //Set Widgets Attributes 
     SetWidgetsAttributes(); 
     //Fill App Grid With Them
-    FillAppGrid(AptPackages);
+    FillAppGrid(AptGet->GetPackages());
 };
 Glib::RefPtr<Gtk::Box> HomePage::GetTopWidget(){
      return _TopBox;
 }
 void HomePage::SetWidgetsAttributes(){
-   return;
-   //Extract All Packages Name from Packages Vector
-   // std::vector<std::string> PackagesName= Apt::ExtractPackagesName(AptPackages);
     //Create Auto Complete Object for the Search bar
-  // _AutoComplete.Init( PackagesName);
+   _AutoComplete.Init( AptGet->GetNames());
     //Set The Auto Complete Into Search Bar
- //  _SearchBar->set_completion(_AutoComplete.GetAutoCompleteObject());
+   _SearchBar->set_completion(_AutoComplete.GetAutoCompleteObject());
 }
 void HomePage::SearchEntryKeyPressed( ){
 std::cout<<"Hi";

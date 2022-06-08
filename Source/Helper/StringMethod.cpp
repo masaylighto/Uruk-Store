@@ -1,4 +1,4 @@
-#include "../Headers/StringMethod.h"
+#include "Helper/StringMethod.h"
 
 std::vector<std::string>  SplitString(const std::string & OriginalString,const std::string & Delimiter){
 

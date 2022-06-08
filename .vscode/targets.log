@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun  7 23:28:18 2022
+# Make data base, printed on Wed Jun  8 13:15:59 2022
 
 # Variables
 
@@ -15,13 +15,11 @@ GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # environment
-NO_AT_BRIDGE = 1
-# environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f6d3889b-5581-4d46-88a6-39c62ccfee0f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c2c56def-4348-47b8-90b9-64e24bd311ab.sock
 # environment
 VSCODE_CWD = /home/lucius/Desktop
 # default
@@ -79,7 +77,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-Dl6imHz5adtT/agent.1462
+SSH_AUTH_SOCK = /tmp/ssh-eCyADAVxsznA/agent.1260
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -99,7 +97,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2644
+VSCODE_PID = 1893
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -109,7 +107,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 70)
 CMAKE_SOURCE_DIR = /home/lucius/Desktop/Uruk-Store
 # environment
-SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1624,unix/lucius:/tmp/.ICE-unix/1624
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1444,unix/lucius:/tmp/.ICE-unix/1444
 # automatic
 *F = $(notdir $*)
 # environment
@@ -181,7 +179,7 @@ EQUALS = =
 # environment
 LOGNAME = lucius
 # environment
-PLATFORMIO_PATH = /home/lucius/.platformio/penv/bin:/home/lucius/.platformio/penv:/home/lucius/.platformio/python3/bin:/home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
+PLATFORMIO_PATH = /home/lucius/.platformio/python3/bin:/home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
 # environment
 SNAP_ARCH = amd64
 # environment
@@ -207,7 +205,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
 # environment
-SSH_AGENT_PID = 1548
+SSH_AGENT_PID = 1366
 # makefile (from 'Makefile', line 44)
 MAKESILENT = -s
 # environment
@@ -267,7 +265,7 @@ SNAP_USER_DATA = /home/lucius/snap/code/97
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=128/1024=12%, Rehash=0, Collisions=4/167=2%
+# Load=127/1024=12%, Rehash=0, Collisions=4/166=2%
 
 # Pattern-specific Variable Values
 
@@ -277,9 +275,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # RCS: could not be stat'd.
 # SCCS: could not be stat'd.
-# . (device 2067, inode 3933603): 18 files, no impossibilities.
+# . (device 2067, inode 3933603): 12 files, no impossibilities.
 
-# 18 files, no impossibilities in 3 directories.
+# 12 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -300,6 +298,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 Source/Pages/HomePage.cpp.s:
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -340,7 +339,6 @@ Source/main.s: Source/main.cpp.s
 #  File does not exist.
 #  File has not been updated.
 
- 
 Source/Pages/MainWindow.i: Source/Pages/MainWindow.cpp.i
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -386,7 +384,7 @@ Source/Base/Page.i: Source/Base/Page.cpp.i
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-07 11:41:35.640820868
+#  Last modified 2022-06-08 12:27:39.637873208
 #  File has been updated.
 #  Successfully updated.
 
@@ -597,6 +595,7 @@ all: cmake_check_build_system
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 102):
+ 
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles /home/lucius/Desktop/Uruk-Store//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles 0
@@ -631,7 +630,6 @@ help:
 	@echo "... Source/Helper/GtkAutoComplete.o"
 	@echo "... Source/Helper/GtkAutoComplete.i"
 	@echo "... Source/Helper/GtkAutoComplete.s"
- 
 	@echo "... Source/Helper/Variety.o"
 	@echo "... Source/Helper/Variety.i"
 	@echo "... Source/Helper/Variety.s"
@@ -893,6 +891,7 @@ Source/Base/Page.cpp.s:
 #  File has not been updated.
 
 Source/Pages/MainWindow.s: Source/Pages/MainWindow.cpp.s
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -925,7 +924,6 @@ Helpers/fast:
 Source/Helper/GtkAutoComplete.cpp.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 294):
@@ -939,12 +937,12 @@ Source/Helper/GtkAutoComplete.cpp.i:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 108 / storage = 1940 B / avg = 17 B
-# current buf: size = 8162 B / used = 1940 B / count = 108 / avg = 17 B
+# strcache buffers: 1 (0) / strings = 103 / storage = 1866 B / avg = 18 B
+# current buf: size = 8162 B / used = 1866 B / count = 103 / avg = 18 B
 
-# strcache performance: lookups = 456 / hit rate = 76%
+# strcache performance: lookups = 450 / hit rate = 77%
 # hash-table stats:
-# Load=108/8192=1%, Rehash=0, Collisions=0/456=0%
-# Finished Make data base on Tue Jun  7 23:28:18 2022
+# Load=103/8192=1%, Rehash=0, Collisions=0/450=0%
+# Finished Make data base on Wed Jun  8 13:15:59 2022
 
  

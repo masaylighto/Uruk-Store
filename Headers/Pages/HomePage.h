@@ -1,8 +1,8 @@
 
-#include "../Base/Page.h"
-#include"../Helper/GtkAutoComplete.h"
-#include "../../Packages/Apt/Headers/Apt.h"
-#include "../Component/AppBox.h"
+#include "Base/Page.h"
+#include"Helper/GtkAutoComplete.h"
+#include "Helper/Apt.h"
+#include "Component/AppBox.h"
 #ifndef H_HomePage
 #define H_HomePage
 
@@ -13,7 +13,8 @@ private:
     //represent the top widget in this page 
     Glib::RefPtr<Gtk::Box> _TopBox;
     Glib::RefPtr<Gtk::Entry> _SearchBar;
-    std::vector<Package> AptPackages;
+    //create instance of class apt
+    Apt* AptGet;
     AutoComplete _AutoComplete;
     /*
     the grid that hold cards that show some of the application that can be downloaded

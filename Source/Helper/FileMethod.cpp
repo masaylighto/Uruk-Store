@@ -1,4 +1,4 @@
-#include "../Headers/FileMethod.h"
+#include "Helper/FileMethod.h"
 
 
 char * ReadFileText(const std::string & FilePath,int FileSize)
@@ -8,7 +8,7 @@ char * ReadFileText(const std::string & FilePath,int FileSize)
     int FileDescriptor=  open(FilePath.c_str(),O_RDONLY);
     if (FileDescriptor==-1)
     {
-         throw std::ifstream::failure(std::strerror(errno));
+         throw std::ifstream::failure("Failed To load File "+FilePath);
     }
     char * FileContent = new char [FileSize];
     read(FileDescriptor,FileContent,FileSize);

@@ -1,4 +1,4 @@
-#include"../Headers/Apt.h"
+#include"Helper/Apt.h"
 
 std::vector<std::string> Apt::GetSourcesPaths()
 {   
@@ -20,7 +20,7 @@ std::vector<std::string> Apt::GetSourcesPaths()
     return SourcesPath;
 }
 
-void Apt::GetSourcePackages(std::vector<Package> & Packages,std::string Path)
+void Apt::GetSourcePackages(std::string Path)
 {
    //this algorithm work as follow
    //the packages information inside files are structured as follow
@@ -60,7 +60,7 @@ void Apt::GetSourcePackages(std::vector<Package> & Packages,std::string Path)
         {
             //add the information of the previous package into the packages vector
             Packages.push_back(PkgInfo);
-            
+            Names.push_back(PkgInfo.Name);
             //set new pointer to prepare for reading the next package
             PkgInfo= {};
             continue;
@@ -92,7 +92,7 @@ void Apt::GetSourcePackages(std::vector<Package> & Packages,std::string Path)
    }
    
   
-   free(SourceFileContent);
+   delete SourceFileContent;
 }
 void Apt::MapToPackage(Package & Pkg , std::string & Key,std::string & Value)
 {
@@ -115,9 +115,8 @@ void Apt::MapToPackage(Package & Pkg , std::string & Key,std::string & Value)
     }
 }
 
-std::vector<Package> Apt::GetPackages(){
-    //vector that will hold all the packages information
-    std::vector<Package> Packages;
+void Apt::ReadPackages(){
+    
     //Get All Source Files
     std::vector<std::string> Paths = GetSourcesPaths();
    
@@ -128,7 +127,7 @@ std::vector<Package> Apt::GetPackages(){
         {
                 
             //Package information of the specfied source file and insert them info Packages Vector 
-            GetSourcePackages(Packages,Path); 
+            GetSourcePackages(Path); 
         }
         catch(const std::exception& e)
         {
@@ -137,6 +136,28 @@ std::vector<Package> Apt::GetPackages(){
       
          
     }
-    // return the packages
+ 
+}
+std::vector<std::string> Apt::GetNames()
+{
+    return Names;
+}
+std::vector<Package> Apt::GetPackages()
+{
     return Packages;
+}
+
+Apt::Apt()
+{
+    ReadPackages();
+}
+//to make sure we using the same instance across the application 
+Apt* Apt::Create()
+{
+    static Apt * instance;
+    if (!instance)
+    {
+        instance = new Apt();
+    }    
+    return instance;
 }
