@@ -2,8 +2,10 @@
 
 int main(int argc,char ** argv){
 
+
     //Create Gtk Application
-    auto App=Gtk::Application::create(argc,argv,"UrukStore");    
+    auto App=Gtk::Application::create(argc,argv,"UrukStore");  
+    
     //Create The Main Window 
     MainWindow MainWindowObject("Ui/Pages/MainWindow.glade","TopWindow"); 
     //load Css File
