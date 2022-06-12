@@ -12,6 +12,7 @@ char * ReadFileText(const std::string & FilePath,int FileSize)
     }
     char * FileContent = new char [FileSize];
     read(FileDescriptor,FileContent,FileSize);
+    close(FileDescriptor);
     return FileContent;
 }
 struct stat GetFileInfo(const std::string & FilePath)
