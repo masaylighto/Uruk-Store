@@ -2,10 +2,11 @@
 
 SqliteCurd::SqliteCurd(std::string Path)
 {
-  if (SQLITE_OK!=sqlite3_open(Path.c_str(),&Db))
+  int State =sqlite3_open(Path.c_str(),&Db);
+  if (SQLITE_OK!=State)
   {
     std::ostringstream stringStream;
-    stringStream<<"couldn't open the file "<<sqlite3_errmsg(Db);
+    stringStream<<"couldn't open the file Error"<<sqlite3_errmsg(Db)<<" State :"<<State;
     throw std::runtime_error(stringStream.str());
   }
     
@@ -50,11 +51,11 @@ sqlite3_stmt * SqliteCurd::Execute(const char * SqlQuery ,std::vector<std::strin
 {
   sqlite3_stmt *Stmt =CreateStatement(SqlQuery);  
   BindParameters(Stmt,SqlParameters);
-  auto Result=sqlite3_step(Stmt);
-  if (SQLITE_DONE!=Result)
+  auto State=sqlite3_step(Stmt);
+  if (SQLITE_DONE!=State)
   { 
     std::ostringstream stringStream;
-    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<Result;
+    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<State;
     throw std::runtime_error(stringStream.str());
   }
 //  FreeStdVector(SqlParameters);
@@ -84,7 +85,13 @@ sqlite3_stmt * SqliteCurd::CreateStatement(const char * SqlQuery){
   sqlite3_stmt *Stmt;
   //the part of our query that the prepare statement left it with no use
   const char* UnUsedPartSqlQuery;
-  sqlite3_prepare(Db,SqlQuery,std::strlen(SqlQuery),&Stmt,&UnUsedPartSqlQuery); 
+  int State=sqlite3_prepare_v3(Db,SqlQuery,std::strlen(SqlQuery),0,&Stmt,&UnUsedPartSqlQuery);
+  if (SQLITE_OK!=State)
+  { 
+    std::ostringstream stringStream;
+    stringStream<<"Failed Prepare Query "<<SqlQuery<<" Error "<<State;
+    throw std::runtime_error(stringStream.str());
+  } 
   return Stmt;
 
 }
@@ -92,11 +99,11 @@ sqlite3_stmt * SqliteCurd::Execute(const char * SqlQuery)
 {
   //Object Pointer For prepared statement
   sqlite3_stmt *Stmt =CreateStatement(SqlQuery); 
-  auto Result=sqlite3_step(Stmt);
-  if (SQLITE_DONE!=Result)
+  auto State=sqlite3_step(Stmt);
+  if (SQLITE_DONE!=State)
   { 
     std::ostringstream stringStream;
-    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<Result;
+    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<State;
     throw std::runtime_error(stringStream.str());
   }
   return Stmt;
