@@ -4,7 +4,9 @@ SqliteCurd::SqliteCurd(std::string Path)
 {
   if (SQLITE_OK!=sqlite3_open(Path.c_str(),&Db))
   {
-    throw new std::runtime_error("couldn't open the file "+std::string(sqlite3_errmsg(Db)));
+    std::ostringstream stringStream;
+    stringStream<<"couldn't open the file "<<sqlite3_errmsg(Db);
+    throw std::runtime_error(stringStream.str());
   }
     
 }
@@ -13,9 +15,20 @@ SqliteCurd * SqliteCurd::Create(std::string Path)
     static SqliteCurd * Instance;
     if (!Instance)
     {
+        if (Path.empty())
+        { 
+        
+          throw  std::runtime_error("Please Call The Right Method To Construct Sqlite Db or Pass A valid Path");
+        }        
         Instance = new SqliteCurd(Path);
     }    
     return Instance;
+
+}
+SqliteCurd * SqliteCurd::Use()
+{
+   
+    return Create("");
 
 }
 
@@ -37,9 +50,12 @@ sqlite3_stmt * SqliteCurd::Execute(const char * SqlQuery ,std::vector<std::strin
 {
   sqlite3_stmt *Stmt =CreateStatement(SqlQuery);  
   BindParameters(Stmt,SqlParameters);
-  if (sqlite3_step(Stmt)!=SQLITE_DONE)
-  {    
-    throw new std::runtime_error("Failed To Execute Query");
+  auto Result=sqlite3_step(Stmt);
+  if (SQLITE_DONE!=Result)
+  { 
+    std::ostringstream stringStream;
+    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<Result;
+    throw std::runtime_error(stringStream.str());
   }
 //  FreeStdVector(SqlParameters);
   return Stmt;
@@ -75,17 +91,20 @@ sqlite3_stmt * SqliteCurd::CreateStatement(const char * SqlQuery){
 sqlite3_stmt * SqliteCurd::Execute(const char * SqlQuery)
 {
   //Object Pointer For prepared statement
-  sqlite3_stmt *Stmt =CreateStatement(SqlQuery);  
-  if (sqlite3_step(Stmt)!=SQLITE_DONE)
-  {    
-    throw new std::runtime_error("Failed To Execute Query");
+  sqlite3_stmt *Stmt =CreateStatement(SqlQuery); 
+  auto Result=sqlite3_step(Stmt);
+  if (SQLITE_DONE!=Result)
+  { 
+    std::ostringstream stringStream;
+    stringStream<<"Failed To Execute Query "<<SqlQuery<<" Error "<<Result;
+    throw std::runtime_error(stringStream.str());
   }
   return Stmt;
 
 }
 void SqliteCurd::DeletePackages()
 {
-  Execute("delete from Packages");
+ sqlite3_finalize(Execute("delete from Packages"));
 }
 void SqliteCurd::AddPackage (Package Pkg)
 {

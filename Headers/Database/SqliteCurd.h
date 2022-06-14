@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <cstring>
 #include <sqlite3.h>
+
 #ifndef H_SqliteCurd
 #define H_SqliteCurd
 
@@ -18,7 +19,7 @@ class SqliteCurd
     /*
     this method create static instance of the class and return it, this method can be used instead of constructing the class every time
     */
-    static SqliteCurd * Create(std::string Path);
+   
   
    
     sqlite3_stmt * Execute(const char * SqlQuery ,std::vector<std::string> & SqlParameters);
@@ -27,6 +28,8 @@ class SqliteCurd
     void FreeStdVector(std::vector<std::string> & Vec);
     void BindParameters(sqlite3_stmt * Stmt,std::vector<std::string> & SqlParameters);
     public :
+    static SqliteCurd * Create(std::string Path);
+    static SqliteCurd * Use();
     std::vector<std::string> GetPackagesName ();
     void DeletePackages ();
     void AddPackage (Package Pkg);

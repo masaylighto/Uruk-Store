@@ -1,8 +1,9 @@
 #include"../Headers/Pages/MainWindow.h"
-
-int main(int argc,char ** argv){
-
-
+#include "Startup.h"
+int main(int argc,char ** argv)
+{
+    //startup routine 
+    Startup();
     //Create Gtk Application
     auto App=Gtk::Application::create(argc,argv,"UrukStore");  
     
