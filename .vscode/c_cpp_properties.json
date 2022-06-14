@@ -38,13 +38,15 @@
                 "/usr/include/gtkmm-3.0",
                 "/usr/include/gtkmm-3.0",
                 "/usr/include/gtkmm-3.0",
-                "/usr/include/gtkmm-3.0"
+                "/usr/include/gtkmm-3.0",
+                "Headers/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64",
+            "intelliSenseMode": "linux-gcc-x64",         
+            "compileCommands": "${config:cmake.buildDirectory}/compile_commands.json",         
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
