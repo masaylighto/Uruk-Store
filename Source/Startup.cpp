@@ -2,7 +2,7 @@
 void Startup::InitDb(){
     try
     {
-           SqliteCurd::Create("UrukStore");
+           SqliteCurd::Create("UrukStore.db");
     }
     catch(const std::exception& e)
     {

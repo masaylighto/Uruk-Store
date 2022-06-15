@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 14 12:21:41 2022
+# Make data base, printed on Wed Jun 15 11:34:08 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ GTK_RC_FILES = /etc/gtk/gtkrc:/home/lucius/.gtkrc:/home/lucius/.config/gtkrc
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cf5e6353-02d7-48e4-9b78-dc358dcbd5ab.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1c28320c-acd1-4546-8822-ea4fc3fe14f9.sock
 # environment
 VSCODE_CWD = /home/lucius/Desktop
 # default
@@ -77,7 +77,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-PDtj13AJOD7V/agent.1312
+SSH_AUTH_SOCK = /tmp/ssh-kKTDkKQxL5Nb/agent.1310
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -97,7 +97,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 52274
+VSCODE_PID = 9945
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -107,7 +107,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 70)
 CMAKE_SOURCE_DIR = /home/lucius/Desktop/Uruk-Store
 # environment
-SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1845,unix/lucius:/tmp/.ICE-unix/1845
+SESSION_MANAGER = local/lucius:@/tmp/.ICE-unix/1459,unix/lucius:/tmp/.ICE-unix/1459
 # automatic
 *F = $(notdir $*)
 # environment
@@ -179,7 +179,7 @@ EQUALS = =
 # environment
 LOGNAME = lucius
 # environment
-PLATFORMIO_PATH = /home/lucius/.platformio/penv/bin:/home/lucius/.platformio/penv:/home/lucius/.platformio/python3/bin:/home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
+PLATFORMIO_PATH = /home/lucius/.platformio/python3/bin:/home/lucius/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/usr/local/go/bin
 # environment
 SNAP_ARCH = amd64
 # environment
@@ -205,7 +205,7 @@ SNAP_DATA = /var/snap/code/98
 # environment
 SNAP_CONTEXT = hfLG31AZCTKaAtUFVnpeIm_E00TQ7RutxnZobraHLg1fwJ8XRNL1
 # environment
-SSH_AGENT_PID = 1755
+SSH_AGENT_PID = 1376
 # makefile (from 'Makefile', line 44)
 MAKESILENT = -s
 # environment
@@ -277,10 +277,10 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # RCS: could not be stat'd.
 # SCCS: could not be stat'd.
-# . (device 2067, inode 3933603): 16 files, no impossibilities.
+# . (device 2051, inode 3933603): 17 files, no impossibilities.
 
  
-# 16 files, no impossibilities in 3 directories.
+# 17 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -371,6 +371,14 @@ default_target: all
 #  File does not exist.
 #  File has not been updated.
 
+Source/Startup.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 484):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Startup.cpp.i
+
 Source/main.s: Source/main.cpp.s
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -388,7 +396,7 @@ Source/main.cpp.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 484):
+#  recipe to execute (from 'Makefile', line 511):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.i
 
 edit_cache/fast: edit_cache
@@ -420,7 +428,7 @@ Source/Base/Page.i: Source/Base/Page.cpp.i
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-12 21:16:11.904328648
+#  Last modified 2022-06-14 22:56:56.291989123
 #  File has been updated.
 #  Successfully updated.
 
@@ -529,8 +537,16 @@ Source/main.cpp.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 493):
+#  recipe to execute (from 'Makefile', line 520):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.s
+
+Source/Startup.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 475):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Startup.cpp.o
 
 edit_cache:
 #  Phony target (prerequisite of .PHONY).
@@ -561,6 +577,7 @@ Source/Pages/HomePage.s: Source/Pages/HomePage.cpp.s
 #  File does not exist.
 #  File has not been updated.
 
+ 
 Source/Helper/StringMethod.cpp.o:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -570,7 +587,12 @@ Source/Helper/StringMethod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/StringMethod.cpp.o
 
 rebuild_cache/fast: rebuild_cache
- 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Source/Startup.o: Source/Startup.cpp.o
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -589,6 +611,14 @@ Source/Helper/StringMethod.cpp.i:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 403):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/StringMethod.cpp.i
+
+Source/Startup.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 493):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Startup.cpp.s
 
 Source/main.i: Source/main.cpp.i
 #  Phony target (prerequisite of .PHONY).
@@ -668,6 +698,12 @@ all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucius/Desktop/Uruk-Store/CMakeFiles 0
 
+Source/Startup.s: Source/Startup.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 Source/Helper/ShellMethod.cpp.o:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -681,7 +717,7 @@ help:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 498):
+#  recipe to execute (from 'Makefile', line 525):
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
@@ -725,6 +761,9 @@ help:
 	@echo "... Source/Pages/MainWindow.o"
 	@echo "... Source/Pages/MainWindow.i"
 	@echo "... Source/Pages/MainWindow.s"
+	@echo "... Source/Startup.o"
+	@echo "... Source/Startup.i"
+	@echo "... Source/Startup.s"
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"
@@ -841,6 +880,7 @@ Source/Helper/GtkAutoComplete.o: Source/Helper/GtkAutoComplete.cpp.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 
 Source/Base/Component.cpp.s:
 #  Phony target (prerequisite of .PHONY).
@@ -849,6 +889,12 @@ Source/Base/Component.cpp.s:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 169):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Component.cpp.s
+
+Source/Startup.i: Source/Startup.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 Source/Helper/StringMethod.cpp.s:
 #  Phony target (prerequisite of .PHONY).
@@ -860,7 +906,6 @@ Source/Helper/StringMethod.cpp.s:
 
 Source/Base/Window.o: Source/Base/Window.cpp.o
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -912,7 +957,7 @@ cmake_check_build_system:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  recipe to execute (from 'Makefile', line 555):
+#  recipe to execute (from 'Makefile', line 585):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 
 Source/Helper/FileMethod.i: Source/Helper/FileMethod.cpp.i
@@ -962,7 +1007,7 @@ Source/main.cpp.o:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 475):
+#  recipe to execute (from 'Makefile', line 502):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/main.cpp.o
 
 Source/Helper/StringMethod.s: Source/Helper/StringMethod.cpp.s
@@ -1014,7 +1059,7 @@ Source/Base/Page.cpp.s:
 #  recipe to execute (from 'Makefile', line 196):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Base/Page.cpp.s
 
-.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend UrukStore UrukStore/fast Source/Base/Component.o Source/Base/Component.cpp.o Source/Base/Component.i Source/Base/Component.cpp.i Source/Base/Component.s Source/Base/Component.cpp.s Source/Base/Page.o Source/Base/Page.cpp.o Source/Base/Page.i Source/Base/Page.cpp.i Source/Base/Page.s Source/Base/Page.cpp.s Source/Base/Window.o Source/Base/Window.cpp.o Source/Base/Window.i Source/Base/Window.cpp.i Source/Base/Window.s Source/Base/Window.cpp.s Source/Component/AppBox.o Source/Component/AppBox.cpp.o Source/Component/AppBox.i Source/Component/AppBox.cpp.i Source/Component/AppBox.s Source/Component/AppBox.cpp.s Source/Database/SqliteCurd.o Source/Database/SqliteCurd.cpp.o Source/Database/SqliteCurd.i Source/Database/SqliteCurd.cpp.i Source/Database/SqliteCurd.s Source/Database/SqliteCurd.cpp.s Source/Helper/Apt.o Source/Helper/Apt.cpp.o Source/Helper/Apt.i Source/Helper/Apt.cpp.i Source/Helper/Apt.s Source/Helper/Apt.cpp.s Source/Helper/FileMethod.o Source/Helper/FileMethod.cpp.o Source/Helper/FileMethod.i Source/Helper/FileMethod.cpp.i Source/Helper/FileMethod.s Source/Helper/FileMethod.cpp.s Source/Helper/GtkAutoComplete.o Source/Helper/GtkAutoComplete.cpp.o Source/Helper/GtkAutoComplete.i Source/Helper/GtkAutoComplete.cpp.i Source/Helper/GtkAutoComplete.s Source/Helper/GtkAutoComplete.cpp.s Source/Helper/ShellMethod.o Source/Helper/ShellMethod.cpp.o Source/Helper/ShellMethod.i Source/Helper/ShellMethod.cpp.i Source/Helper/ShellMethod.s Source/Helper/ShellMethod.cpp.s Source/Helper/StringMethod.o Source/Helper/StringMethod.cpp.o Source/Helper/StringMethod.i Source/Helper/StringMethod.cpp.i Source/Helper/StringMethod.s Source/Helper/StringMethod.cpp.s Source/Pages/HomePage.o Source/Pages/HomePage.cpp.o Source/Pages/HomePage.i Source/Pages/HomePage.cpp.i Source/Pages/HomePage.s Source/Pages/HomePage.cpp.s Source/Pages/MainWindow.o Source/Pages/MainWindow.cpp.o Source/Pages/MainWindow.i Source/Pages/MainWindow.cpp.i Source/Pages/MainWindow.s Source/Pages/MainWindow.cpp.s Source/main.o Source/main.cpp.o Source/main.i Source/main.cpp.i Source/main.s Source/main.cpp.s help cmake_check_build_system
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend UrukStore UrukStore/fast Source/Base/Component.o Source/Base/Component.cpp.o Source/Base/Component.i Source/Base/Component.cpp.i Source/Base/Component.s Source/Base/Component.cpp.s Source/Base/Page.o Source/Base/Page.cpp.o Source/Base/Page.i Source/Base/Page.cpp.i Source/Base/Page.s Source/Base/Page.cpp.s Source/Base/Window.o Source/Base/Window.cpp.o Source/Base/Window.i Source/Base/Window.cpp.i Source/Base/Window.s Source/Base/Window.cpp.s Source/Component/AppBox.o Source/Component/AppBox.cpp.o Source/Component/AppBox.i Source/Component/AppBox.cpp.i Source/Component/AppBox.s Source/Component/AppBox.cpp.s Source/Database/SqliteCurd.o Source/Database/SqliteCurd.cpp.o Source/Database/SqliteCurd.i Source/Database/SqliteCurd.cpp.i Source/Database/SqliteCurd.s Source/Database/SqliteCurd.cpp.s Source/Helper/Apt.o Source/Helper/Apt.cpp.o Source/Helper/Apt.i Source/Helper/Apt.cpp.i Source/Helper/Apt.s Source/Helper/Apt.cpp.s Source/Helper/FileMethod.o Source/Helper/FileMethod.cpp.o Source/Helper/FileMethod.i Source/Helper/FileMethod.cpp.i Source/Helper/FileMethod.s Source/Helper/FileMethod.cpp.s Source/Helper/GtkAutoComplete.o Source/Helper/GtkAutoComplete.cpp.o Source/Helper/GtkAutoComplete.i Source/Helper/GtkAutoComplete.cpp.i Source/Helper/GtkAutoComplete.s Source/Helper/GtkAutoComplete.cpp.s Source/Helper/ShellMethod.o Source/Helper/ShellMethod.cpp.o Source/Helper/ShellMethod.i Source/Helper/ShellMethod.cpp.i Source/Helper/ShellMethod.s Source/Helper/ShellMethod.cpp.s Source/Helper/StringMethod.o Source/Helper/StringMethod.cpp.o Source/Helper/StringMethod.i Source/Helper/StringMethod.cpp.i Source/Helper/StringMethod.s Source/Helper/StringMethod.cpp.s Source/Pages/HomePage.o Source/Pages/HomePage.cpp.o Source/Pages/HomePage.i Source/Pages/HomePage.cpp.i Source/Pages/HomePage.s Source/Pages/HomePage.cpp.s Source/Pages/MainWindow.o Source/Pages/MainWindow.cpp.o Source/Pages/MainWindow.i Source/Pages/MainWindow.cpp.i Source/Pages/MainWindow.s Source/Pages/MainWindow.cpp.s Source/Startup.o Source/Startup.cpp.o Source/Startup.i Source/Startup.cpp.i Source/Startup.s Source/Startup.cpp.s Source/main.o Source/main.cpp.o Source/main.i Source/main.cpp.i Source/main.s Source/main.cpp.s help cmake_check_build_system
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1078,19 +1123,19 @@ Source/Helper/ShellMethod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UrukStore.dir/build.make CMakeFiles/UrukStore.dir/Source/Helper/ShellMethod.cpp.i
 
 # files hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=22/389=6%
+# Load=107/1024=10%, Rehash=0, Collisions=24/413=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 126 / storage = 2580 B / avg = 20 B
-# current buf: size = 8162 B / used = 2580 B / count = 126 / avg = 20 B
+# strcache buffers: 1 (0) / strings = 133 / storage = 2707 B / avg = 20 B
+# current buf: size = 8162 B / used = 2707 B / count = 133 / avg = 20 B
 
-# strcache performance: lookups = 564 / hit rate = 77%
+# strcache performance: lookups = 598 / hit rate = 77%
 # hash-table stats:
-# Load=126/8192=2%, Rehash=0, Collisions=0/564=0%
-# Finished Make data base on Tue Jun 14 12:21:41 2022
+# Load=133/8192=2%, Rehash=0, Collisions=0/598=0%
+# Finished Make data base on Wed Jun 15 11:34:08 2022
 
  
