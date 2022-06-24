@@ -121,5 +121,5 @@ void SqliteCurd::AddPackage (Package Pkg)
   SqlParameters.push_back(Pkg.Section);
   SqlParameters.push_back(Pkg.Version);
   SqlParameters.push_back(Pkg.Maintainer);
-  Execute("Insert into Packages (Name,Section,Version,Maintainer) values (?,?,?,?),",SqlParameters);
+  Execute("Insert OR REPLACE into Packages (Name,Section,Version,Maintainer) values (?,?,?,?)",SqlParameters);
 }

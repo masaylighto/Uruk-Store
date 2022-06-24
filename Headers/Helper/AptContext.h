@@ -9,7 +9,9 @@
 #include "Helper/FileMethod.h"
 #include "Helper/StringMethod.h"
 #include <filesystem>
-
+#include <vector.tcc>
+#include <string.h>
+#include <ept/apt/apt.h>
 #ifndef H_apt
 #define H_apt
 struct Package
@@ -20,10 +22,10 @@ struct Package
     std::string Section;
 };
 //Hold Apt Get Method
-class Apt
+class AptContext
 {
 
-    Apt();
+    AptContext();
      //vector that will hold all the packages information
     std::vector<std::string> Names;
     //vector that will hold all the packages Names
@@ -51,11 +53,11 @@ class Apt
     /*
     create and use class if no previous instance created    
     */
-    static Apt* Create();
+    static AptContext* Create();
     /*
     create and use class if and dispose any previous instance created    
     */
-    static Apt* CreateNew();
+    static AptContext* CreateNew();
     std::vector<std::string> GetNames();
     std::vector<Package> GetPackages();
     

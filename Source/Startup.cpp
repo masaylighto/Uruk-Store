@@ -18,7 +18,7 @@ void Startup::UpdateDb()
     SqliteCurd::Use()->DeletePackages();
     //get all the packages info from Apt
     //and insert them one by one into Sqlite
-    for (auto &Pkg : Apt::Create()->GetPackages())
+    for (auto &Pkg : AptContext::Create()->GetPackages())
     {
        SqliteCurd::Use()->AddPackage(Pkg); 
     }
@@ -27,7 +27,7 @@ Startup::Startup()
 {
     EnsureSuperUserMode();
     InitDb();    
-    EnsureDbUpdated();   
+    //EnsureDbUpdated();   
 }
 
 void Startup::EnsureDbUpdated()

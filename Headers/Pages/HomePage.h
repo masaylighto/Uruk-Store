@@ -1,7 +1,7 @@
 
 #include "Base/Page.h"
 #include"Helper/GtkAutoComplete.h"
-#include "Helper/Apt.h"
+#include "Helper/AptContext.h"
 #include "Component/AppBox.h"
 #ifndef H_HomePage
 #define H_HomePage
@@ -14,7 +14,7 @@ private:
     Glib::RefPtr<Gtk::Box> _TopBox;
     Glib::RefPtr<Gtk::Entry> _SearchBar;
     //create instance of class apt
-    Apt* AptGet;
+    AptContext* AptGet;
     AutoComplete _AutoComplete;
     /*
     the grid that hold cards that show some of the application that can be downloaded

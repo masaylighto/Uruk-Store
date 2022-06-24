@@ -62,6 +62,7 @@
         "iomanip": "cpp",
         "filesystem": "cpp",
         "fstream": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "unordered_set": "cpp"
     }
 }
