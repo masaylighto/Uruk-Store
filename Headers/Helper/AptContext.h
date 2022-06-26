@@ -12,43 +12,40 @@
 #include <vector.tcc>
 #include <string.h>
 #include <ept/apt/apt.h>
+#include<ept/debtags/debtags.h>
+#include<ept/axi/axi.h>
+#include<ept/utils/string.h>
+#include<ept/utils/sys.h>
+#include<ept/apt/recordparser.h>
+#include <list>
 #ifndef H_apt
 #define H_apt
-struct Package
-{
-    std::string Name;
-    std::string Version;
-    std::string Maintainer;
-    std::string Section;
-};
+//shorten the name space 
+namespace apt = ept::apt;
 //Hold Apt Get Method
 class AptContext
 {
 
     AptContext();
      //vector that will hold all the packages information
-    std::vector<std::string> Names;
+    std::vector<std::string> _Names;
+    std::vector<std::string> _Catagories;
     //vector that will hold all the packages Names
-    std::vector<Package> Packages;  
+    std::vector<apt::RecordParser> _Packages;  
     /*
     get list of all files that hold the apt get package informations
     */
     std::vector<std::string> GetSourcesPaths();
-    /*
-    get packages information stored in the specified  source file
-    and add them to the Packages Vector That Passed As Paramater
+        /*
+    Get Packages info as string using libept
     */
-     void GetSourcePackages(std::string Path);
+     std::vector<std::string> GetRawPackages();
 
     /*
-    Map KeyValue into Package
+    Parse The packages and store their value in the class member variable
     */
-     void MapToPackage(Package & Pkg , std::string & Key,std::string & Value);
 
-    /*
-    Read Apt Files and Get Data
-    */
-    void ReadPackages();
+    void ParsePackages();
     public:
     /*
     create and use class if no previous instance created    
@@ -58,9 +55,10 @@ class AptContext
     create and use class if and dispose any previous instance created    
     */
     static AptContext* CreateNew();
-    std::vector<std::string> GetNames();
-    std::vector<Package> GetPackages();
-    
+;
+   const std::vector<std::string> GetNames();
+   const std::vector<apt::RecordParser> GetPackages();
+   const std::vector<std::string> GetCatagories();
 };
 
 #endif

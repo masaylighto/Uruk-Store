@@ -34,7 +34,7 @@ void HomePage::ExtractAppGrid()
 {
     _AppGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-void HomePage::FillAppGrid(std::vector<Package> Apps)
+void HomePage::FillAppGrid(const std::vector<apt::RecordParser> & Apps)
 { 
       //to Specify Which Row, we gonna insert or card into ,we define the variable here 
     // so every 3 loop it gonna increase by 1 , cause we want only three column
@@ -42,7 +42,7 @@ void HomePage::FillAppGrid(std::vector<Package> Apps)
     int Cols=0;
     for(int Index=0; Index<6 && Index < Apps.size();Index++)
     {   
-       const Package Pkg=Apps[Index];
+       const apt::RecordParser Pkg=Apps[Index];
         //here we try to maintain only the col in the grid
         if (Index%3==0)
         {   //if we fill the three cols then go to the next row
@@ -63,11 +63,12 @@ void HomePage::FillAppGrid(std::vector<Package> Apps)
      }
    
 }
-AppBox * HomePage::CreateCard(Package Pkg)
+AppBox * HomePage::CreateCard(const apt::RecordParser & Pkg)
 {
    //Class That Represent the Cards
    AppBox* Box = new AppBox();   
    //set the Name of The Box
-   Box->SetName(Pkg.Name);
+   Box->SetName(Pkg.lookup("Package"));
+   Box->SetDescription(Pkg.lookup("Description"));
    return Box;
 }

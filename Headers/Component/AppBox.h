@@ -12,12 +12,17 @@ class AppBox:public Component
 {
     private:
        Glib::RefPtr<Gtk::Label> _NameLabel;
+       Glib::RefPtr<Gtk::Label> _DescriptionLabel;
        Glib::RefPtr<Gtk::Button> _ShowBtn;
        Glib::RefPtr<Gtk::Box> _Container;
     /*
     Extract App Name from Builder
     */
     void ExtractNameLabel();
+        /*
+    Extract App Name from Builder
+    */
+    void ExtractDescriptionLabel();
     /*
     
     Extract Show Btn from Builder
@@ -38,5 +43,9 @@ class AppBox:public Component
     Get The Top Widget in the Parsed Glade File
     */
     Glib::RefPtr<Gtk::Box> GetTopWidget();
+    /*
+    Set The Text On the Label That represent The Description
+    */
+    void SetDescription(std::string Name);
 };
 #endif

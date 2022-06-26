@@ -50,8 +50,8 @@ public:
     
     fill the application grid with application
     */
-    void FillAppGrid(std::vector<Package> Apps);
-   AppBox * CreateCard(Package Pkg);
+    void FillAppGrid(const std::vector<apt::RecordParser> & Apps);
+    AppBox * CreateCard(const apt::RecordParser & Pkg);
 };
 
 
