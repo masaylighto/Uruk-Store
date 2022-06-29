@@ -67,7 +67,7 @@
       </packing>
     </child>
     <child>
-      <!-- n-columns=4 n-rows=3 -->
+      <!-- n-columns=4 n-rows=4 -->
       <object class="GtkGrid" id="AppGrid">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
@@ -77,6 +77,18 @@
         <property name="column-spacing">15</property>
         <property name="row-homogeneous">True</property>
         <property name="column-homogeneous">True</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
         <child>
           <placeholder/>
         </child>

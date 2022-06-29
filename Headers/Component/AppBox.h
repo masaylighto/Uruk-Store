@@ -12,7 +12,7 @@ class AppBox:public Component
 {
     private:
        Glib::RefPtr<Gtk::Label> _NameLabel;
-       Glib::RefPtr<Gtk::Label> _DescriptionLabel;
+       Glib::RefPtr<Gtk::TextView> _DescriptionLabel;
        Glib::RefPtr<Gtk::Button> _ShowBtn;
        Glib::RefPtr<Gtk::Box> _Container;
     /*

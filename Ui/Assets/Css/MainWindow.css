@@ -1,6 +1,4 @@
-.bg-Blueish{
-background-image: url("Ui/Assets/Icons/Bg.png");
-}
+
 .bg-Trans{
     background-color: rgba(255, 255, 255, 0);
 }
@@ -10,26 +8,27 @@ background-image: url("Ui/Assets/Icons/Bg.png");
 .shadow{
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.118);
 }
+.Noshadow{
+    box-shadow:none;
+}
 .Border-none{
 border: none;
 }
-.Bg-white-Trans{
-    background: rgba(255, 255, 255, 0.92);
-}
-.Bg-white-Barley-Trans{
-    background: rgba(255, 255, 255, 0.89);
-}
-.Bg-white{
-    background: white;
-}
+
 .SettingsIcon{
     background: url("Ui/Assets/Icons/Settings.svg");
     background-repeat: no-repeat;
     background-size: contain;
 
 }
+.LeftSideBg{
+    background: url("Ui/Assets/Icons/LeftSideBg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
 .HomeIcon{
-    background: url("Ui/Assets/Icons/Home.png");
+    background: url("Ui/Assets/Icons/Home.svg");
     background-repeat: no-repeat;
     background-size: contain;
     
@@ -37,15 +36,30 @@ border: none;
 .Rounded{
     border-radius: 20px;
 }
-.Bg-Gradient-Bluish{
-    background:  linear-gradient(to left,#e5f3f9 ,#eff7fa);
+.Rounded-left{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
 }
-.Bg-Gradient-icy{
-    background:  linear-gradient(to top,#d3edf7,#e0f2f8  ,#edf7fa  ,#edfbff ,#edf7fa );
+.Bg-White{
+    background-color: #fff;
 }
-.text-black{
-    color: black;
+.Bg-Dark{
+    background-color: #1f203e;
 }
-.Opacity-80{
-opacity: 1
+.Bg-SecondaryColor{
+    background:linear-gradient(to right, #91daff,#bae2fb)
+}
+
+.Border_Left{
+    border-left: 1px white solid;
+}
+.border{
+    border: 1px solid;
+}
+.border-black{
+    border-color: black;
+}
+.OnClick:active{
+    background-color: #91daff;
 }

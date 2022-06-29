@@ -44,19 +44,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 21,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 29,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 22,
+				"line" : 21,
 				"parent" : 0
 			}
 		]
@@ -76,159 +70,159 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/home/lucius/Desktop/Uruk-Store/Headers"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gtkmm-3.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/gtkmm-3.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/atkmm-1.6"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gtk-3.0/unix-print"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gdkmm-3.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/gdkmm-3.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/giomm-2.4"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/giomm-2.4/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/pangomm-1.4"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/glibmm-2.4"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gtk-3.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/at-spi2-atk/2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/at-spi-2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/dbus-1.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/dbus-1.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gio-unix-2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/cairo"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/pango-1.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/fribidi"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/harfbuzz"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/atk-1.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/cairomm-1.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/pixman-1"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/uuid"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/freetype2"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/libpng16"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/sigc++-2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/gdk-pixbuf-2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/libmount"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/blkid"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/glib-2.0"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/apt-pkg"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/include/c++/10/bits"
 				}
 			],
@@ -266,116 +260,111 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-lsqlite3",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
 				"fragment" : "-lapt-pkg",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "-lept",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgtkmm-3.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-latkmm-1.6",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgdkmm-3.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgiomm-2.4",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lpangomm-1.4",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lglibmm-2.4",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgtk-3",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgdk-3",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lpangocairo-1.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lpango-1.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lharfbuzz",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-latk-1.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lcairo-gobject",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgio-2.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lcairomm-1.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lcairo",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lsigc-2.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgdk_pixbuf-2.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lgobject-2.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 4,
 				"fragment" : "-lglib-2.0",
 				"role" : "libraries"
 			},

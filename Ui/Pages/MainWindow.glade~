@@ -228,7 +228,6 @@
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
-                            <property name="margin-top">3</property>
                             <style>
                               <class name="bg-Trans"/>
                               <class name="Border-none"/>
@@ -248,7 +247,6 @@
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
-                            <property name="image-position">top</property>
                             <style>
                               <class name="bg-Trans"/>
                               <class name="Border-none"/>

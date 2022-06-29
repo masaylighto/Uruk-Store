@@ -19,15 +19,18 @@ AppBox::AppBox():Component("Ui/Pages/AppBox.glade")
 }
 void AppBox::ExtractDescriptionLabel()
 {
-   _DescriptionLabel  =ExtractRefPtrWidget<Gtk::Label>("Description");
+   _DescriptionLabel  =ExtractRefPtrWidget<Gtk::TextView>("Description");
 }
 void AppBox::SetName(std::string Name)
 {
     _NameLabel->set_text(Name);
 }
-void AppBox::SetDescription(std::string Name)
+void AppBox::SetDescription(std::string Description)
 {
-    _DescriptionLabel->set_text(Name);
+
+   auto Buffer=  Gtk::TextBuffer::create();
+   Buffer->set_text(Description);
+    _DescriptionLabel->set_buffer(Buffer);
 }
  void AppBox::ExtractContainer(){
 

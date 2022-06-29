@@ -40,11 +40,11 @@ void HomePage::FillAppGrid(const std::vector<apt::RecordParser> & Apps)
     // so every 3 loop it gonna increase by 1 , cause we want only three column
     int Row=0;
     int Cols=0;
-    for(int Index=0; Index<6 && Index < Apps.size();Index++)
+    for(int Index=0; Index<12 && Index < Apps.size();Index++)
     {   
        const apt::RecordParser Pkg=Apps[Index];
         //here we try to maintain only the col in the grid
-        if (Index%3==0)
+        if (Index%4==0)
         {   //if we fill the three cols then go to the next row
             Row++;            
             //reset the col of index%3 so only 3 col will be in any Row

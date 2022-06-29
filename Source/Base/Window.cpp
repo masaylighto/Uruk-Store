@@ -4,8 +4,12 @@
 Window::Window(std::string PathToGladeFile,std::string WindowName):Component(PathToGladeFile)
 {  
     _Window = ExtractRefPtrWidget<Gtk::Window>(WindowName);
-}
 
+}
+void Window::SetCustomTitleBar(Gtk::HeaderBar & TitleBar)
+{
+_Window->set_titlebar(TitleBar);
+}
 bool Window::LoadCssFile(std::string PathToCssFile)
 {
     try
