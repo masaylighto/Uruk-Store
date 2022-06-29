@@ -16,8 +16,7 @@ private:
     */
     std::shared_ptr<HomePage> _HomePage;
 
-    //this variable will hold the Catagories Grid
-    Glib::RefPtr<Gtk::Grid> _CatagoriesGrid;
+
 public:
     /* this constructor will pass its parameter to window base class */
     MainWindow(std::string PathToGladeFile,std::string WindowName);
@@ -32,8 +31,7 @@ public:
      and Store into the PagesFrame Global Variable
     */
     void InitPagesFrame();
-    void InitCatagoriesGrid();
-    Gtk::Button* CreateCategoryLabel(std::string text);
+
     void InitHeaderBar();
 };
 

@@ -30,7 +30,7 @@ public:
     Glib::RefPtr<Gtk::Window>  GetWindow();
     bool LoadCssFile(std::string PathToCssFile);
     void SetCustomTitleBar(Gtk::HeaderBar & TitleBar);
-
+    void SetWindowSize(const int width,const int height);
 };
 
 

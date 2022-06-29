@@ -24,6 +24,8 @@ private:
         this vector Will Contain a list of all Card That will be created;
     */
     std::vector<AppBox *> CardList; 
+    //this variable will hold the Catagories Grid
+    Glib::RefPtr<Gtk::Grid> _CatagoriesGrid;
 public:
     /* this constructor will pass its parameter to window base class */
     HomePage();
@@ -52,6 +54,8 @@ public:
     */
     void FillAppGrid(const std::vector<apt::RecordParser> & Apps);
     AppBox * CreateCard(const apt::RecordParser & Pkg);
+    void InitCatagoriesGrid();
+    Gtk::Button* CreateCategoryLabel(std::string text);
 };
 
 

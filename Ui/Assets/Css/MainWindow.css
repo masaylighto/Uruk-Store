@@ -33,16 +33,36 @@ border: none;
     background-size: contain;
     
 }
+.CheckIcon{
+    background: url("Ui/Assets/Icons/Check.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+.BorderlessCheckIcon{
+    background: url("Ui/Assets/Icons/BorderlessCheck.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
 .Rounded{
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .Rounded-left{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+.Rounded-Right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 
 }
 .Bg-White{
     background-color: #fff;
+}
+.Text-White{
+    color: #fff;
 }
 .Bg-Dark{
     background-color: #1f203e;

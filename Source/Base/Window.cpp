@@ -10,6 +10,9 @@ void Window::SetCustomTitleBar(Gtk::HeaderBar & TitleBar)
 {
 _Window->set_titlebar(TitleBar);
 }
+void Window::SetWindowSize(const int Width,const int Height){
+    _Window->set_size_request(Width,Height);
+}
 bool Window::LoadCssFile(std::string PathToCssFile)
 {
     try

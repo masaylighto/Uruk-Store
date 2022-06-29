@@ -3,18 +3,22 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkBox" id="AppBox">
-    <property name="width-request">200</property>
-    <property name="height-request">200</property>
+    <property name="width-request">700</property>
+    <property name="height-request">50</property>
     <property name="visible">True</property>
     <property name="can-focus">False</property>
-    <property name="halign">center</property>
     <property name="valign">center</property>
-    <property name="orientation">vertical</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
     <child>
       <object class="GtkLabel" id="AppName">
         <property name="height-request">40</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+        <property name="halign">start</property>
+        <property name="valign">center</property>
+        <property name="margin-start">20</property>
+        <property name="hexpand">True</property>
         <property name="label" translatable="yes">label</property>
       </object>
       <packing>
@@ -26,8 +30,11 @@
     <child>
       <object class="GtkTextView" id="Description">
         <property name="name">Description</property>
+        <property name="width-request">600</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
+        <property name="valign">center</property>
+        <property name="hexpand">False</property>
         <property name="vexpand">True</property>
         <property name="wrap-mode">word</property>
         <property name="left-margin">10</property>
@@ -46,16 +53,17 @@
     </child>
     <child>
       <object class="GtkButton" id="ShowBtn">
-        <property name="label" translatable="yes">Show</property>
-        <property name="height-request">50</property>
+        <property name="width-request">40</property>
+        <property name="height-request">40</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">True</property>
+        <property name="valign">center</property>
+        <property name="vexpand">False</property>
         <style>
           <class name="Border-none"/>
-          <class name="text-black"/>
           <class name="bg-Trans"/>
-          <class name="Bg-SecondaryColor"/>
+          <class name="BorderlessCheckIcon"/>
         </style>
       </object>
       <packing>
