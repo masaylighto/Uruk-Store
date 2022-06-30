@@ -20,6 +20,7 @@
 #include <list>
 #ifndef H_apt
 #define H_apt
+typedef std::map<std::string,std::string>  PkgInfo;
 //shorten the name space 
 namespace apt = ept::apt;
 //Hold Apt Get Method
@@ -31,20 +32,17 @@ class AptContext
     std::vector<std::string> _Names;
     std::vector<std::string> _Catagories;
     //vector that will hold all the packages Names
-    std::vector<apt::RecordParser> _Packages;  
+    std::vector<PkgInfo> _Packages;  
     /*
     get list of all files that hold the apt get package informations
     */
     std::vector<std::string> GetSourcesPaths();
-        /*
-    Get Packages info as string using libept
-    */
-     std::vector<std::string> GetRawPackages();
+
 
     /*
     Parse The packages and store their value in the class member variable
     */
-
+    PkgInfo ParseRawPackage(std::string  str);
     void ParsePackages();
     public:
     /*
@@ -57,7 +55,7 @@ class AptContext
     static AptContext* CreateNew();
 ;
    const std::vector<std::string> GetNames();
-   const std::vector<apt::RecordParser> GetPackages();
+   const std::vector<PkgInfo> GetPackages();
    const std::vector<std::string> GetCatagories();
 };
 

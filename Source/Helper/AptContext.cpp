@@ -1,29 +1,43 @@
 #include"Helper/AptContext.h"
-std::vector<std::string> AptContext::GetRawPackages()
-{
-    apt::Apt Apt;
-    std::vector<std::string> Pkgs;
-    std::copy(Apt.recordBegin(), Apt.recordEnd(), std::back_inserter(Pkgs));
-    return Pkgs;
+#include<map>
+
+
+PkgInfo AptContext::ParseRawPackage(std::string  RawPkg)
+{  
+    std::istringstream StringStream(RawPkg);
+    std::string Line;
+    std::string Key;
+    std::string Value;
+    PkgInfo PkgAttributes;
+    int SeperatorPosition=0;
+    while (getline(StringStream, Line))
+    {     
+        SeperatorPosition=Line.find_first_of(':',0)+1;
+        Key   = Line.substr(0, SeperatorPosition-1);   
+        Value = Line.substr(SeperatorPosition, Line.length()-SeperatorPosition);
+        PkgAttributes[Key] = Value;
+    }
+return PkgAttributes;
 }
+
 void AptContext::ParsePackages(){
     
-    //get  package information  as string
-    std::vector<std::string> Pkgs = GetRawPackages();
+ 
     //temp list to hold catagories will be used to create a unique and sorted vector
     std::list<std::string> Catagories;
-   
-    //loop through them 
-    for (std::string & Pkg : Pkgs)
-    {
+    apt::Apt Apt;
+    for(apt::Apt::RecordIterator Pkg= Apt.recordBegin();Pkg!=Apt.recordEnd();++Pkg)
+    {   
         try
         {   //parse the raw package info
-            apt::RecordParser ParsedPkg(Pkg) ; 
-            //app the package into the vector           
-            _Packages.push_back(ParsedPkg);
+            PkgInfo AptPkg =  ParseRawPackage(*Pkg);
+      
+            // app the package into the vector           
+             _Packages.push_back(AptPkg);
             //add the name into the name vector and the category into the catagories list
-            _Names.push_back(ParsedPkg.lookup("Package"));
-            Catagories.push_back(ParsedPkg.lookup("Section"));
+            _Names.push_back(AptPkg["Package"]);
+             Catagories.push_back(AptPkg["Section"]);
+  
         }
         catch(const std::exception& e)
         {
@@ -50,7 +64,7 @@ const std::vector<std::string> AptContext::GetNames()
 {
     return _Names;
 }
-const std::vector<apt::RecordParser> AptContext::GetPackages()
+const std::vector<PkgInfo> AptContext::GetPackages()
 {
     return _Packages;
 }

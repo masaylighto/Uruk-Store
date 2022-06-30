@@ -34,7 +34,7 @@ void HomePage::ExtractAppGrid()
 {
     _AppGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-void HomePage::FillAppGrid(const std::vector<apt::RecordParser> & Apps)
+void HomePage::FillAppGrid(const std::vector<PkgInfo> & Apps)
 { 
       //to Specify Which Row, we gonna insert or card into ,we define the variable here 
     // so every 3 loop it gonna increase by 1 , cause we want only three column
@@ -42,7 +42,7 @@ void HomePage::FillAppGrid(const std::vector<apt::RecordParser> & Apps)
 
       for(int Index=0; Index<12 && Index < Apps.size();Index++)
     {   
-       const apt::RecordParser Pkg=Apps[Index];
+       const PkgInfo Pkg=Apps[Index];
    
         AppBox* Card=CreateCard(Pkg);
         //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
@@ -58,13 +58,13 @@ void HomePage::FillAppGrid(const std::vector<apt::RecordParser> & Apps)
      }
    
 }
-AppBox * HomePage::CreateCard(const apt::RecordParser & Pkg)
+AppBox * HomePage::CreateCard(const PkgInfo & Pkg)
 {
    //Class That Represent the Cards
    AppBox* Box = new AppBox();   
    //set the Name of The Box
-   Box->SetName(Pkg.lookup("Package"));
-   Box->SetDescription(Pkg.lookup("Description"));
+   Box->SetName(Pkg.at("Package"));
+   Box->SetDescription(Pkg.at("Description"));
    return Box;
 }
 void HomePage::InitCatagoriesGrid()

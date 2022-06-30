@@ -52,8 +52,8 @@ public:
     
     fill the application grid with application
     */
-    void FillAppGrid(const std::vector<apt::RecordParser> & Apps);
-    AppBox * CreateCard(const apt::RecordParser & Pkg);
+    void FillAppGrid(const std::vector<PkgInfo> & Apps);
+    AppBox * CreateCard(const PkgInfo & Pkg);
     void InitCatagoriesGrid();
     Gtk::Button* CreateCategoryLabel(std::string text);
 };
