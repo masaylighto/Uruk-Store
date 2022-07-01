@@ -63,8 +63,8 @@ AppBox * HomePage::CreateCard(const PkgInfo & Pkg)
    //Class That Represent the Cards
    AppBox* Box = new AppBox();   
    //set the Name of The Box
-   Box->SetName(Pkg.at("Package"));
-   Box->SetDescription(Pkg.at("Description"));
+   Box->SetName(Pkg.Name);
+   Box->SetDescription(Pkg.Description);
    return Box;
 }
 void HomePage::InitCatagoriesGrid()
@@ -92,7 +92,7 @@ Gtk::Button* HomePage::CreateCategoryLabel(std::string text)
         Btn->set_size_request(100,40);
         Btn->set_margin_top(10);
         Btn->set_margin_bottom(10);
-        Btn->set_alignment(Gtk::Align::ALIGN_CENTER,Gtk::Align::ALIGN_CENTER);
+       // Btn->set_alignment(Gtk::Align::ALIGN_CENTER,Gtk::Align::ALIGN_CENTER);
         auto Context= Btn->get_style_context();
         Context->add_class("Bg-White");
         Context->add_class("Rounded");

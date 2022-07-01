@@ -13,9 +13,27 @@ PkgInfo AptContext::ParseRawPackage(std::string  RawPkg)
     while (getline(StringStream, Line))
     {     
         SeperatorPosition=Line.find_first_of(':',0)+1;
-        Key   = Line.substr(0, SeperatorPosition-1);   
-        Value = Line.substr(SeperatorPosition, Line.length()-SeperatorPosition);
-        PkgAttributes[Key] = Value;
+        Key   = Line.substr(0, SeperatorPosition-1);
+        if (Key=="Package" )
+        {
+            Value = Line.substr(SeperatorPosition, Line.length()-SeperatorPosition);
+            PkgAttributes.Name=Value;
+            continue;
+        }
+         if (Key=="Section")
+        {
+            Value = Line.substr(SeperatorPosition, Line.length()-SeperatorPosition);
+            PkgAttributes.Section=Value;
+            continue;
+        }
+         if (Key=="Description")
+        {
+            Value = Line.substr(SeperatorPosition, Line.length()-SeperatorPosition);
+            PkgAttributes.Description=Value;
+            continue;
+        }   
+        
+    
     }
 return PkgAttributes;
 }
@@ -35,8 +53,8 @@ void AptContext::ParsePackages(){
             // app the package into the vector           
              _Packages.push_back(AptPkg);
             //add the name into the name vector and the category into the catagories list
-            _Names.push_back(AptPkg["Package"]);
-             Catagories.push_back(AptPkg["Section"]);
+            _Names.push_back(AptPkg.Name);
+             Catagories.push_back(AptPkg.Section);
   
         }
         catch(const std::exception& e)

@@ -20,7 +20,14 @@
 #include <list>
 #ifndef H_apt
 #define H_apt
-typedef std::map<std::string,std::string>  PkgInfo;
+struct AptPkg
+{
+std::string Name;
+std::string Section;
+std::string Description;
+};
+
+typedef AptPkg PkgInfo;
 //shorten the name space 
 namespace apt = ept::apt;
 //Hold Apt Get Method
