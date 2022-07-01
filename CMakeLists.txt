@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 #set (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_BUILD_TYPE RELEASE)
-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 #set(CMAKE_BUILD_TYPE Debug)
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
@@ -16,13 +16,6 @@ set( SOURCE_FILES  "Source/Helper/FileMethod.cpp"  "Source/Helper/ShellMethod.cp
 add_executable(UrukStore ${SOURCE_FILES})
 target_link_libraries(UrukStore PRIVATE Threads::Threads)
 link_directories(    ${GTKMM_LIBRARY_DIRS}   "/usr/lib/x86_64-linux-gnu/" )
-target_link_libraries(UrukStore PRIVATE libapt-pkg.so)
 target_link_libraries(UrukStore PRIVATE libept.so)
 include_directories("Headers/" "/usr/local/include/" "/usr/include/" ${GTKMM_INCLUDE_DIRS} "/usr/include/apt-pkg/" "/usr/include/c++/10/bits/")
-
-
-
-
-
-
 target_link_libraries(UrukStore PRIVATE ${GTKMM_LIBRARIES})

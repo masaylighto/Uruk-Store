@@ -5,9 +5,6 @@
 
 int main(int argc,char ** argv)
 { 
-
-    AptContext::Create();
-
       //startup routine 
     Startup();
     //Create Gtk Application
