@@ -67,7 +67,6 @@ void AptContext::ParsePackages()
              _Packages.push_back(AptPkg);
             //add the name into the name vector and the category into the catagories list
             _Names.push_back(AptPkg.Name);
-             Catagories.push_back(AptPkg.Section);
   
         }
         catch(const std::exception& e)
@@ -77,19 +76,12 @@ void AptContext::ParsePackages()
       
          
     }
-    //sort the list then use unique to get a list with out duplicated value
-    Catagories.sort();
-    Catagories.unique();
-    //fill the class member catagories vector with the Catagories list
-    for (auto Category = Catagories.begin(); Category != Catagories.end(); ++Category)
-    {
-        _Catagories.push_back(*Category);
-    }
+
     _IsParsingCompleted=true;
 }
-const std::vector<std::string> AptContext::GetCatagories()
+std::map<std::string,std::string> AptContext::GetCatagories()
 {
-    return _Catagories;
+    return _CatagoriesAliasMap;
 }
 const std::vector<std::string> AptContext::GetNames()
 {

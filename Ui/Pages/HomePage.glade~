@@ -66,6 +66,8 @@
                     </child>
                     <style>
                       <class name="bg-Trans"/>
+                      <class name="Border-none"/>
+                      <class name="Noshadow"/>
                     </style>
                   </object>
                   <packing>
@@ -74,13 +76,23 @@
                     <property name="position">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="Border-none"/>
+                  <class name="Noshadow"/>
+                </style>
               </object>
             </child>
+            <style>
+              <class name="Noshadow"/>
+              <class name="Border-none"/>
+            </style>
           </object>
         </child>
         <style>
           <class name="Bg-SecondaryColor"/>
           <class name="Border_Left"/>
+          <class name="Noshadow"/>
+          <class name="Border-none"/>
         </style>
       </object>
       <packing>

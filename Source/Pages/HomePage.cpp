@@ -77,12 +77,13 @@ AppBox * HomePage::CreateCard(const PkgInfo & Pkg)
 void HomePage::InitCatagoriesGrid()
 {
     _CatagoriesGrid = ExtractRefPtrWidget<Gtk::Grid>("CatagoriesGrid");
-    const std::vector<std::string> Catagories = AptGet->GetCatagories(); 
-
-    for(int Index=0; Index < Catagories.size();Index++)
-    {   
+    std::map<std::string,std::string> Categories = AptGet->GetCatagories(); 
+    int Index=0;   
+    for(std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); ++Category,Index++ )
+    {
+         const std::string Key=Category->first;
         _CatagoriesGrid->insert_row(Index);
-        _CatagoriesGrid->attach(*CreateCategoryLabel(Catagories[Index]),0,Index);
+        _CatagoriesGrid->attach(*CreateCategoryLabel(Key),0,Index);
 
     }
     _CatagoriesGrid->show_all_children();

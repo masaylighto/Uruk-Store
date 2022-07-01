@@ -16,6 +16,7 @@ int main(int argc,char ** argv)
     MainWindowObject.LoadCssFile("Ui/Assets/Css/MainWindow.css");
     //Show The Main Window
     Glib::RefPtr<Gtk::Window> Window = MainWindowObject.GetWindow();
-    //show the window       
+    //show the window     
     App->run(*Window.get());
+    
 }
