@@ -34,36 +34,37 @@ namespace apt = ept::apt;
 class AptContext
 {
 
-    AptContext();
-     //vector that will hold all the packages information
-    std::vector<std::string> _Names;
-    std::vector<std::string> _Catagories;
+    AptContext();   
     //vector that will hold all the packages Names
+    std::vector<std::string> _Names;
+    //vector that will hold all the packages Catagories
+    std::vector<std::string> _Catagories;
+    //vector that will hold all the packages information
     std::vector<PkgInfo> _Packages;  
-    /*
-    get list of all files that hold the apt get package informations
-    */
-    std::vector<std::string> GetSourcesPaths();
-
-
-    /*
-    Parse The packages and store their value in the class member variable
+    // will hold the state of parsing
+    static bool _IsParsingCompleted;    /*
+    Parse The package Raw Data and return struct that hold the package info
     */
     PkgInfo ParseRawPackage(std::string  str);
+    /*Parse all packages info */
     void ParsePackages();
     public:
     /*
     create and use class if no previous instance created    
     */
-    static AptContext* Create();
+    static AptContext* Use();
     /*
     create and use class if and dispose any previous instance created    
     */
     static AptContext* CreateNew();
-;
-   const std::vector<std::string> GetNames();
-   const std::vector<PkgInfo> GetPackages();
-   const std::vector<std::string> GetCatagories();
+    /*get all package names */ 
+    const std::vector<std::string> GetNames();
+    /*get vector that hold structs which contain the package information */
+    const std::vector<PkgInfo> GetPackages();
+    /*Get All Package Catagories  */
+    const std::vector<std::string> GetCatagories();
+    /*return boolean represent if the package data parsing completed*/
+    const static bool IsParsingCompleted();
 };
 
 #endif

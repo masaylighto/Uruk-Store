@@ -7,7 +7,7 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
    _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");
     ExtractAppGrid(); 
     //Get Apt Get Packages and set them to a class member 
-    AptGet =  AptContext::Create();
+    AptGet =  AptContext::Use();
     InitCatagoriesGrid();
 
    
