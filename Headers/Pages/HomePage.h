@@ -1,6 +1,5 @@
 
 #include "Base/Page.h"
-#include"Helper/GtkAutoComplete.h"
 #include "Helper/AptContext.h"
 #include "Component/AppBox.h"
 #ifndef H_HomePage
@@ -15,7 +14,6 @@ private:
     Glib::RefPtr<Gtk::Entry> _SearchBar;
     //create instance of class apt
     AptContext* AptGet;
-    AutoComplete _AutoComplete;
     /*
     the grid that hold cards that show some of the application that can be downloaded
     */
@@ -47,13 +45,13 @@ private:
     /*create card that represent tha packages*/
     PkgBox * CreateCard(const PkgInfo & Pkg);
     void FillCatagoriesGrid();
-    Gtk::Button* CreateCategoryLabel(std::string text);
+    Gtk::Button* CreateCategoryBtn(std::string text);
     /* this method used to free the CreatePkgs */
     void FreePkgBoxVector();
 public:
     /* this constructor will pass its parameter to window base class */
     HomePage();
-    ~HomePage()=default;
+    ~HomePage();
     /*
     Extract the top Widget which in this page is Gtk::Box from builder and return it into the caller    
     */

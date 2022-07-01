@@ -29,11 +29,8 @@ Glib::RefPtr<Gtk::Box> HomePage::GetTopWidget(){
 }
 
 
-void HomePage::SetWidgetsAttributes(){
-    //Create Auto Complete Object for the Search bar
-  // _AutoComplete.Init( AptGet->GetNames());
-    //Set The Auto Complete Into Search Bar
-  // _SearchBar->set_completion(_AutoComplete.GetAutoCompleteObject());
+void HomePage::SetWidgetsAttributes()
+{
   _SearchBar->signal_key_release_event().connect(sigc::mem_fun(*this,&HomePage::SearchKeyReleased),false);
 }
 
@@ -104,15 +101,15 @@ void HomePage::FillCatagoriesGrid()
     int Index=0;   
     for( std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); Category++,Index++ )
     {
-         const std::string Key=Category->first;
+         const std::string CategoryName=Category->first;
         _CatagoriesGrid->insert_row(Index);
-        _CatagoriesGrid->attach(*CreateCategoryLabel(Key),0,Index);
+        _CatagoriesGrid->attach(*CreateCategoryBtn(CategoryName),0,Index);
 
     }
     _CatagoriesGrid->show_all_children();
 }
 
-Gtk::Button* HomePage::CreateCategoryLabel(std::string text) 
+Gtk::Button* HomePage::CreateCategoryBtn(std::string text) 
 {
 
         Gtk::Button * Btn =new Gtk::Button();     
@@ -131,4 +128,8 @@ Gtk::Button* HomePage::CreateCategoryLabel(std::string text)
         Context->add_class("OnClick");
         Context->add_class("Noshadow");
         return Btn;
+}
+HomePage::~HomePage()
+{
+      FreePkgBoxVector();
 }

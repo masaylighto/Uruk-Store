@@ -66,7 +66,7 @@ void AptContext::ParsePackages()
             // app the package into the vector           
              _Packages.push_back(AptPkg);
             //add the name into the name vector and the category into the catagories list
-            _Names.push_back(AptPkg.Name);
+     
   
         }
         catch(const std::exception& e)
@@ -83,10 +83,7 @@ const std::map<std::string,std::string> AptContext::GetCatagories()
 {
     return _CatagoriesAliasMap;
 }
-const std::vector<std::string> AptContext::GetNames()
-{
-    return _Names;
-}
+
 const std::vector<PkgInfo> AptContext::GetPackages()
 {
     return _Packages;

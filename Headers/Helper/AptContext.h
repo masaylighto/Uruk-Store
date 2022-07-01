@@ -37,8 +37,7 @@ class AptContext
     //we add include it into the class cause we want the map to be used from the class
     #include "AptCatagoriesMap.h"
     AptContext();   
-    //vector that will hold all the packages Names
-    std::vector<std::string> _Names;
+
     //vector that will hold all the packages information
     std::vector<PkgInfo> _Packages;  
     // will hold the state of parsing
@@ -53,8 +52,6 @@ class AptContext
     create and use class if no previous instance created    
     */
     static AptContext* Use();
-    /*get all package names */ 
-    const std::vector<std::string> GetNames();
     /*get vector that hold structs which contain the package information */
     const std::vector<PkgInfo> GetPackages();
     /*Get All Package Catagories  */
