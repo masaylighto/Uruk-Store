@@ -34,8 +34,9 @@ void HomePage::ClearPackagesGrid()
     //free vector of
     for (int index = (_PackageCardVector.size())-1; index >=0 ; index--)
     {  
-        _PackagesGrid->remove(*(*(_PackageCardVector.at(index))));
-        delete _PackageCardVector[index];
+        PackageCard * pkg=  _PackageCardVector[index];
+        _PackagesGrid->remove(*(*pkg));        
+        delete pkg;
     }
     _PackageCardVector.clear();
     
@@ -62,7 +63,7 @@ void HomePage::FillPackagesGrid(const int Skip ,const int Take,const std::string
             continue;
         }
         Row++;    
-        PackageCard* Card=CreateCard(Pkg);
+        PackageCard* Card = CreateCard(Pkg);
         //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
         _PackageCardVector.push_back(Card);
         //the class PackageCard is a holder class that hold the widgets            

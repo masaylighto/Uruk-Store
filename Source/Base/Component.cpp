@@ -17,5 +17,5 @@ Component::Component(std::string PathToGladeFile)
 }
 Component::~Component(){
 
-    _Builder.clear();
+    _Builder.release();
 }

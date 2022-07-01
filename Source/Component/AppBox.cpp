@@ -17,6 +17,14 @@ PackageCard::PackageCard():Component("Ui/Pages/AppBox.glade")
     ExtractDescriptionLabel();
     ExtractContainer();
 }
+ PackageCard::~PackageCard()
+ {
+    _NameLabel.release();
+    _ShowBtn.release();
+    _DescriptionLabel.release();
+    _Container.release();
+ 
+ }
 void PackageCard::ExtractDescriptionLabel()
 {
    _DescriptionLabel  =ExtractRefPtrWidget<Gtk::TextView>("Description");

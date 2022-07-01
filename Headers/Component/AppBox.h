@@ -35,6 +35,7 @@ class PackageCard:public Component
     void ExtractContainer();
     public: 
     PackageCard();
+    ~PackageCard();
     /*
     Set The Text On the Label That represent The app name
     */
