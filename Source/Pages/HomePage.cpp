@@ -79,7 +79,7 @@ void HomePage::InitCatagoriesGrid()
     _CatagoriesGrid = ExtractRefPtrWidget<Gtk::Grid>("CatagoriesGrid");
     std::map<std::string,std::string> Categories = AptGet->GetCatagories(); 
     int Index=0;   
-    for(std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); ++Category,Index++ )
+    for( std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); Category++,Index++ )
     {
          const std::string Key=Category->first;
         _CatagoriesGrid->insert_row(Index);

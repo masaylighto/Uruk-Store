@@ -1,7 +1,7 @@
   #include<map>
   #include<string>  
 //used to map Gui Catagories text to the actual catagories used by Apt
-std::map<std::string,std::string> _CatagoriesAliasMap=
+const std::map<std::string,std::string> _CatagoriesAliasMap=
 {
 
 {"All","*"},

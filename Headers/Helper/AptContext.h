@@ -58,7 +58,7 @@ class AptContext
     /*get vector that hold structs which contain the package information */
     const std::vector<PkgInfo> GetPackages();
     /*Get All Package Catagories  */
-     std::map<std::string,std::string> GetCatagories();
+    const std::map<std::string,std::string> GetCatagories();
     /*return boolean represent if the package data parsing completed*/
     const  bool IsParsingCompleted();
 };

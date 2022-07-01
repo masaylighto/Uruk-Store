@@ -79,7 +79,7 @@ void AptContext::ParsePackages()
 
     _IsParsingCompleted=true;
 }
-std::map<std::string,std::string> AptContext::GetCatagories()
+const std::map<std::string,std::string> AptContext::GetCatagories()
 {
     return _CatagoriesAliasMap;
 }
