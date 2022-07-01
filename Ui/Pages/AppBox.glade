@@ -31,16 +31,20 @@
       <object class="GtkTextView" id="Description">
         <property name="name">Description</property>
         <property name="width-request">600</property>
+        <property name="height-request">50</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
-        <property name="valign">center</property>
+        <property name="valign">start</property>
         <property name="hexpand">False</property>
-        <property name="vexpand">True</property>
+        <property name="vexpand">False</property>
+        <property name="editable">False</property>
         <property name="wrap-mode">word</property>
         <property name="left-margin">10</property>
         <property name="right-margin">10</property>
         <property name="top-margin">10</property>
         <property name="bottom-margin">10</property>
+        <property name="cursor-visible">False</property>
+        <property name="accepts-tab">False</property>
         <style>
           <class name="Bg-white"/>
         </style>

@@ -15,66 +15,89 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
         
     }
 
-    InitCatagoriesGrid();
+    FillCatagoriesGrid();
 
    
 
     //Set Widgets Attributes 
     SetWidgetsAttributes(); 
     //Fill App Grid With Them
-    FillAppGrid(AptGet->GetPackages());
+    FillPkgsGrid(0,12);
 };
 Glib::RefPtr<Gtk::Box> HomePage::GetTopWidget(){
      return _TopBox;
 }
+
+
 void HomePage::SetWidgetsAttributes(){
     //Create Auto Complete Object for the Search bar
-   _AutoComplete.Init( AptGet->GetNames());
+  // _AutoComplete.Init( AptGet->GetNames());
     //Set The Auto Complete Into Search Bar
-   _SearchBar->set_completion(_AutoComplete.GetAutoCompleteObject());
-}
-void HomePage::SearchEntryKeyPressed( ){
-std::cout<<"Hi";
+  // _SearchBar->set_completion(_AutoComplete.GetAutoCompleteObject());
+  _SearchBar->signal_key_release_event().connect(sigc::mem_fun(*this,&HomePage::SearchKeyReleased),false);
 }
 
+bool HomePage::SearchKeyReleased(GdkEventKey* event)
+{
+    FillPkgsGrid(0,12,_SearchBar->get_text());
+  
+    return true;
+}
+void HomePage::FreePkgBoxVector()
+{
+    //free vector of
+    for (size_t index = 0; index < _PkgBoxVector.size(); index++)
+    {
+        delete _PkgBoxVector[index];
+        _AppGrid->remove_row(0);
+    }
+    _PkgBoxVector.clear();
+    
+}
 void HomePage::ExtractAppGrid()
 {
     _AppGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-void HomePage::FillAppGrid(const std::vector<PkgInfo> & Apps)
+void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string PartialMatchName)
 { 
-      //to Specify Which Row, we gonna insert or card into ,we define the variable here 
+     //free any previously Created PkgBox 
+    FreePkgBoxVector();
+
+    const std::vector<PkgInfo> & Pkgs = AptGet->GetPackages(); 
+     //to Specify Which Row, we gonna insert or card into ,we define the variable here 
     // so every 3 loop it gonna increase by 1 , cause we want only three column
     int Row=0;
-
-      for(int Index=0; Index<12 && Index < Apps.size();Index++)
+    for(int Index=Skip; Row<Take && Index < Pkgs.size();Index++)
     {   
-       const PkgInfo Pkg=Apps[Index];
+        const PkgInfo & Pkg=Pkgs[Index];
    
-        AppBox* Card=CreateCard(Pkg);
+        if (Pkg.Name.find(PartialMatchName)==-1 && PartialMatchName!="")
+        {
+            continue;
+        }
+        Row++;    
+        PkgBox* Card=CreateCard(Pkg);
         //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
-        CardList.push_back(Card);
-        //the class AppBox is a holder class that hold the widgets,
+        _PkgBoxVector.push_back(Card);
+        //the class PkgBox is a holder class that hold the widgets,
         //and here we get to top widget that contain the rest of the widget in the glade file
         auto BoxWidget=Card->GetTopWidget().get();
         //we insert the top widget into the Grid
-        _AppGrid->insert_row(Index);
-       _AppGrid->attach(*(BoxWidget),0,Index);
+        _AppGrid->insert_row(Row);
+       _AppGrid->attach(*(BoxWidget),0,Row);
         //increase the cols so the next object will be in the next col
-   
-     }
-   
+    }
 }
-AppBox * HomePage::CreateCard(const PkgInfo & Pkg)
+PkgBox * HomePage::CreateCard(const PkgInfo & Pkg)
 {
    //Class That Represent the Cards
-   AppBox* Box = new AppBox();   
+   PkgBox* Box = new PkgBox();   
    //set the Name of The Box
    Box->SetName(Pkg.Name);
    Box->SetDescription(Pkg.Description);
    return Box;
 }
-void HomePage::InitCatagoriesGrid()
+void HomePage::FillCatagoriesGrid()
 {
     _CatagoriesGrid = ExtractRefPtrWidget<Gtk::Grid>("CatagoriesGrid");
     std::map<std::string,std::string> Categories = AptGet->GetCatagories(); 

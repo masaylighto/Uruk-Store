@@ -1,42 +1,42 @@
 #include "../../Headers/Component/AppBox.h"
 
-void AppBox::ExtractNameLabel()
+void PkgBox::ExtractNameLabel()
 {
     _NameLabel = ExtractRefPtrWidget<Gtk::Label>("AppName");
 
 }
-void AppBox::ExtractShowBtn()
+void PkgBox::ExtractShowBtn()
 {
   _ShowBtn = ExtractRefPtrWidget<Gtk::Button>("ShowBtn");
 
 }
-AppBox::AppBox():Component("Ui/Pages/AppBox.glade")
+PkgBox::PkgBox():Component("Ui/Pages/AppBox.glade")
 {
     ExtractNameLabel();
     ExtractShowBtn();
     ExtractDescriptionLabel();
     ExtractContainer();
 }
-void AppBox::ExtractDescriptionLabel()
+void PkgBox::ExtractDescriptionLabel()
 {
    _DescriptionLabel  =ExtractRefPtrWidget<Gtk::TextView>("Description");
 }
-void AppBox::SetName(std::string Name)
+void PkgBox::SetName(std::string Name)
 {
     _NameLabel->set_text(Name);
 }
-void AppBox::SetDescription(std::string Description)
+void PkgBox::SetDescription(std::string Description)
 {
 
    auto Buffer=  Gtk::TextBuffer::create();
    Buffer->set_text(Description);
     _DescriptionLabel->set_buffer(Buffer);
 }
- void AppBox::ExtractContainer(){
+ void PkgBox::ExtractContainer(){
 
      _Container = ExtractRefPtrWidget<Gtk::Box>("AppBox");
  }
-Glib::RefPtr<Gtk::Box> AppBox::GetTopWidget()
+Glib::RefPtr<Gtk::Box> PkgBox::GetTopWidget()
 {
     return _Container;
 }
