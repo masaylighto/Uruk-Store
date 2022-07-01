@@ -18,7 +18,7 @@
 					]
 				}
 			],
-			"name" : "RELEASE",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "UrukStore::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-UrukStore-RELEASE-8a3b426672e4c1b52540.json",
+					"jsonFile" : "target-UrukStore-Debug-174ead135852216f6b71.json",
 					"name" : "UrukStore",
 					"projectIndex" : 0
 				}

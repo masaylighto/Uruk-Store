@@ -43,10 +43,12 @@ bool HomePage::SearchKeyReleased(GdkEventKey* event)
 void HomePage::FreePkgBoxVector()
 {
     //free vector of
-    for (size_t index = 0; index < _PkgBoxVector.size(); index++)
-    {
+    for (int index = (_PkgBoxVector.size())-1; index >=0 ; index--)
+    {  
+        _AppGrid->remove(*(_PkgBoxVector.at(index)->GetTopWidget().get()));
         delete _PkgBoxVector[index];
-        _AppGrid->remove_row(0);
+  
+       
     }
     _PkgBoxVector.clear();
     
@@ -78,10 +80,9 @@ void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string Par
         _PkgBoxVector.push_back(Card);
         //the class PkgBox is a holder class that hold the widgets,
         //and here we get to top widget that contain the rest of the widget in the glade file
-        auto BoxWidget=Card->GetTopWidget().get();
-        //we insert the top widget into the Grid
-        _AppGrid->insert_row(Row);
+        auto BoxWidget=Card->GetTopWidget().get();     
        _AppGrid->attach(*(BoxWidget),0,Row);
+       
         //increase the cols so the next object will be in the next col
     }
 }
