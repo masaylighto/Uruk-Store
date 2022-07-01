@@ -20,7 +20,7 @@ private:
 public:
     /* this constructor will pass its parameter to window base class */
     MainWindow(std::string PathToGladeFile,std::string WindowName);
-    ~MainWindow()=default;
+    ~MainWindow();
     /*
         this function will load the first Page In The Application
         which contain the search for application 

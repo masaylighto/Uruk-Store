@@ -28,3 +28,7 @@ void MainWindow::InitPagesFrame()
      HeaderBar.get_style_context()->add_class("bg-Trans");
      SetCustomTitleBar(HeaderBar);
 }
+MainWindow::~MainWindow()
+{
+ _PagesFrame.release();
+}

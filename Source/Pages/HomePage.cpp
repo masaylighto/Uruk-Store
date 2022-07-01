@@ -11,7 +11,6 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
     //AptGet Run in a thread and after this line we gonna use its data
     //so we check and wait till its finish parsing data
     while (!AptGet->IsParsingCompleted());
-    FillCatagoriesGrid();
     //Set Widgets Attributes 
     SetWidgetsAttributes(); 
     //Fill App Grid With Them
@@ -117,5 +116,8 @@ Gtk::Button* HomePage::CreateCategoryBtn(std::string text)
 }
 HomePage::~HomePage()
 {
-      ClearPackagesGrid();
+    ClearPackagesGrid();
+    _TopBox.release();
+    _PackagesGrid.release();
+    _CatagoriesGrid.release();
 }

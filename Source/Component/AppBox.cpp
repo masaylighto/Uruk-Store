@@ -19,6 +19,7 @@ PackageCard::PackageCard():Component("Ui/Pages/AppBox.glade")
 }
  PackageCard::~PackageCard()
  {
+    
     _NameLabel.release();
     _ShowBtn.release();
     _DescriptionLabel.release();
