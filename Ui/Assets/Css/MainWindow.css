@@ -27,7 +27,7 @@ border: none;
 .LeftSideBg{
     background: url("Ui/Assets/Icons/LeftSideBg.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 
 }
 .HomeIcon{
