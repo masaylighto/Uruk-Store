@@ -8,7 +8,7 @@
 /*
 Base Class For Gtk Based Class That I Will make in this application
 */
-class PkgBox:public Component
+class PackageCard:public Component
 {
     private:
        Glib::RefPtr<Gtk::Label> _NameLabel;
@@ -34,7 +34,7 @@ class PkgBox:public Component
     */
     void ExtractContainer();
     public: 
-    PkgBox();
+    PackageCard();
     /*
     Set The Text On the Label That represent The app name
     */

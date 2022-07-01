@@ -7,7 +7,7 @@ PkgInfo AptContext::ParseRawPackage(std::string  RawPkg)
     std::istringstream StringStream(RawPkg);
     //variable to hold the current line we are reading
     std::string Line;
-    //the package information orginized as Package attribute name: Package attribute value
+    //the package information organized as Package attribute name: Package attribute value
     //ex Package: gcc
     //so we create two variable to hold the information key and value
     std::string Key;
@@ -44,39 +44,27 @@ PkgInfo AptContext::ParseRawPackage(std::string  RawPkg)
             PkgAttributes.Description=Value;
             continue;
         }   
-        
-    
     }
     return PkgAttributes;
 }
 
 void AptContext::ParsePackages()
 { 
-    //temp list to hold catagories will be used to create a unique and sorted vector
-    std::list<std::string> Catagories;
     //create instance of the lebept apt binding
     apt::Apt Apt;
     //iterate through every package
     for(apt::Apt::RecordIterator Pkg= Apt.recordBegin();Pkg!=Apt.recordEnd();++Pkg)
     {   
         try
-        {   pthread_t thread;
-             //parse the raw package info
-            PkgInfo AptPkg =  ParseRawPackage(*Pkg);      
+        {   
             // app the package into the vector           
-             _Packages.push_back(AptPkg);
-            //add the name into the name vector and the category into the catagories list
-     
-  
+            _Packages.push_back(ParseRawPackage(*Pkg));
         }
         catch(const std::exception& e)
         {
             std::cerr << e.what() << '\n';
-        }
-      
-         
+        }            
     }
-
     _IsParsingCompleted=true;
 }
 const std::map<std::string,std::string> AptContext::GetCatagories()

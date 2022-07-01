@@ -7,7 +7,6 @@
 #include <stdexcept>
 #include <vector>
 #include "Helper/FileMethod.h"
-#include "Helper/StringMethod.h"
 #include <filesystem>
 #include <vector.tcc>
 #include <string.h>

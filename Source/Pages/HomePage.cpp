@@ -6,28 +6,17 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
    _TopBox    = ExtractRefPtrWidget<Gtk::Box>("TopBox");
    _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");
     ExtractAppGrid(); 
-  
     //Get Apt Get Packages and set them to a class member 
     AptGet =  AptContext::Use();
-  
-    while (!AptGet->IsParsingCompleted())
-    {
-        
-    }
-
+    //AptGet Run in a thread and after this line we gonna use its data
+    //so we check and wait till its finish parsing data
+    while (!AptGet->IsParsingCompleted());
     FillCatagoriesGrid();
-
-   
-
     //Set Widgets Attributes 
     SetWidgetsAttributes(); 
     //Fill App Grid With Them
-    FillPkgsGrid(0,12);
+    FillPackagesGrid(0,12);
 };
-Glib::RefPtr<Gtk::Box> HomePage::GetTopWidget(){
-     return _TopBox;
-}
-
 
 void HomePage::SetWidgetsAttributes()
 {
@@ -36,56 +25,56 @@ void HomePage::SetWidgetsAttributes()
 
 bool HomePage::SearchKeyReleased(GdkEventKey* event)
 {
-    FillPkgsGrid(0,12,_SearchBar->get_text());
+    FillPackagesGrid(0,12,_SearchBar->get_text());
   
     return true;
 }
-void HomePage::FreePkgBoxVector() 
+void HomePage::ClearPackagesGrid() 
 {
     //free vector of
-    for (int index = (_PkgBoxVector.size())-1; index >=0 ; index--)
+    for (int index = (_PackageCardVector.size())-1; index >=0 ; index--)
     {  
-        _AppGrid->remove(*(*(_PkgBoxVector.at(index))));
-        delete _PkgBoxVector[index];
+        _PackagesGrid->remove(*(*(_PackageCardVector.at(index))));
+        delete _PackageCardVector[index];
     }
-    _PkgBoxVector.clear();
+    _PackageCardVector.clear();
     
 }
 void HomePage::ExtractAppGrid()
 {
-    _AppGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
+    _PackagesGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string PartialMatchName) 
+void HomePage::FillPackagesGrid(const int Skip ,const int Take,const std::string PartialMatchName) 
 { 
-     //free any previously Created PkgBox 
-    FreePkgBoxVector();
+     //free any previously Created PackageCard 
+    ClearPackagesGrid();
 
-    const std::vector<PkgInfo> & Pkgs = AptGet->GetPackages(); 
+    const std::vector<PkgInfo> & Packages = AptGet->GetPackages(); 
      //to Specify Which Row, we gonna insert or card into ,we define the variable here 
     // so every 3 loop it gonna increase by 1 , cause we want only three column
     int Row=0;
-    for(int Index=Skip; Row<Take && Index < Pkgs.size();Index++)
+    for(int Index=Skip; Row<Take && Index < Packages.size();Index++)
     {   
-        const PkgInfo & Pkg=Pkgs[Index];
+        const PkgInfo & Pkg=Packages[Index];
    
         if (Pkg.Name.find(PartialMatchName)==-1 && PartialMatchName!="")
         {
             continue;
         }
         Row++;    
-        PkgBox* Card=CreateCard(Pkg);
+        PackageCard* Card=CreateCard(Pkg);
         //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
-        _PkgBoxVector.push_back(Card);
-        //the class PkgBox is a holder class that hold the widgets            
-       _AppGrid->attach(*(*Card),0,Row);
+        _PackageCardVector.push_back(Card);
+        //the class PackageCard is a holder class that hold the widgets            
+       _PackagesGrid->attach(*(*Card),0,Row);
        
         //increase the cols so the next object will be in the next col
     }
 }
-PkgBox * HomePage::CreateCard(const PkgInfo & Pkg)
+PackageCard * HomePage::CreateCard(const PkgInfo & Pkg)
 {
    //Class That Represent the Cards
-   PkgBox* Box = new PkgBox();   
+   PackageCard* Box = new PackageCard();   
    //set the Name of The Box
    Box->SetName(Pkg.Name);
    Box->SetDescription(Pkg.Description);
@@ -127,5 +116,5 @@ Gtk::Button* HomePage::CreateCategoryBtn(std::string text)
 }
 HomePage::~HomePage()
 {
-      FreePkgBoxVector();
+      ClearPackagesGrid();
 }

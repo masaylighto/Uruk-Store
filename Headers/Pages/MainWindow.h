@@ -32,7 +32,7 @@ public:
     */
     void InitPagesFrame();
 
-    void InitHeaderBar();
+    void CreateCustomHeaderBar();
       //return the top widget through implicit conversation
 
 };

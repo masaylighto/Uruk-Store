@@ -5,24 +5,26 @@ MainWindow::MainWindow(std::string PathToGladeFile,std::string WindowName):Windo
 {
     InitPagesFrame();
     LoadHomePage();
-    InitHeaderBar();
+    CreateCustomHeaderBar();
     SetWindowSize(1000,600);
 }
 void MainWindow::LoadHomePage()
 {
-    //create instance from HomePage
+    //show the main page of the store
     _HomePage = std::shared_ptr<HomePage>(new HomePage());
     _PagesFrame.get()->add(*(*_HomePage));
 }
 
 void MainWindow::InitPagesFrame()
 {
+    //get the _frame from gtk Builder
     _PagesFrame = ExtractRefPtrWidget<Gtk::Frame>("PagesFrame");
 }
 
- void MainWindow::InitHeaderBar()
+ void MainWindow::CreateCustomHeaderBar()
 {
-     Gtk::HeaderBar headerbar;
-     headerbar.get_style_context()->add_class("bg-Trans");
-     SetCustomTitleBar(headerbar);
+     //add custom title bar and make it transparent
+     Gtk::HeaderBar HeaderBar;
+     HeaderBar.get_style_context()->add_class("bg-Trans");
+     SetCustomTitleBar(HeaderBar);
 }
