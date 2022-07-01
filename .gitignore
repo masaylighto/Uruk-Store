@@ -12,3 +12,4 @@ build/
 .vscode/
 _deps
 a.out
+UrukStore
