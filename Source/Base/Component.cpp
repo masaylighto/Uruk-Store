@@ -15,3 +15,7 @@ Component::Component(std::string PathToGladeFile)
     //Load The Glade File
     LoadGladeFile(PathToGladeFile);
 }
+Component::~Component(){
+
+    _Builder.clear();
+}

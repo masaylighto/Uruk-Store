@@ -4,7 +4,7 @@
 #include "Component/AppBox.h"
 #ifndef H_HomePage
 #define H_HomePage
-
+#define NoGCOptimization __attribute__((optimize("O0")))  
 class HomePage:public Page
 {
 
@@ -41,13 +41,13 @@ private:
      Skip and Take for Pagination
      PartialMatchName Used To Filter Package By Name   
      */
-    void FillPkgsGrid(const int Skip = 0,const int Take = 12 ,const std::string PartialMatchName="");
+    void NoGCOptimization FillPkgsGrid(const int Skip = 0,const int Take = 12 ,const std::string PartialMatchName="") ;
     /*create card that represent tha packages*/
     PkgBox * CreateCard(const PkgInfo & Pkg);
     void FillCatagoriesGrid();
     Gtk::Button* CreateCategoryBtn(std::string text);
     /* this method used to free the CreatePkgs */
-    void FreePkgBoxVector();
+    void NoGCOptimization FreePkgBoxVector();
 public:
     /* this constructor will pass its parameter to window base class */
     HomePage();
@@ -57,6 +57,11 @@ public:
     */
 
     Glib::RefPtr<Gtk::Box> GetTopWidget();
+     //return the top widget through implicit conversation
+    operator Gtk::Box* ()
+    {
+      return _TopBox.get();
+    } 
 };
 
 

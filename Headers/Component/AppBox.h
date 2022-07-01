@@ -47,5 +47,11 @@ class PkgBox:public Component
     Set The Text On the Label That represent The Description
     */
     void SetDescription(std::string Name);
+    //return the top widget through implicit conversation
+    operator Gtk::Box * ()
+    {
+      return _Container.get();
+    } 
+    
 };
 #endif

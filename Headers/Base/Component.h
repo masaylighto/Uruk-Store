@@ -29,7 +29,7 @@ public:
         the constructor will receive the path to the glade file then call the LoadGladeFile            
     */
     Component(std::string PathToGladeFile);
-    ~Component()=default;
+    ~Component();
   
     //I'm very sure that declaring function body inside header is a very ugly thing
     //but give me a chance to explain before you hang me, Your Honor.

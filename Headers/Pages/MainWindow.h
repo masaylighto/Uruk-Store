@@ -33,6 +33,8 @@ public:
     void InitPagesFrame();
 
     void InitHeaderBar();
+      //return the top widget through implicit conversation
+
 };
 
 

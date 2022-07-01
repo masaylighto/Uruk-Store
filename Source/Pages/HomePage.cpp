@@ -40,15 +40,13 @@ bool HomePage::SearchKeyReleased(GdkEventKey* event)
   
     return true;
 }
-void HomePage::FreePkgBoxVector()
+void HomePage::FreePkgBoxVector() 
 {
     //free vector of
     for (int index = (_PkgBoxVector.size())-1; index >=0 ; index--)
     {  
-        _AppGrid->remove(*(_PkgBoxVector.at(index)->GetTopWidget().get()));
+        _AppGrid->remove(*(*(_PkgBoxVector.at(index))));
         delete _PkgBoxVector[index];
-  
-       
     }
     _PkgBoxVector.clear();
     
@@ -57,7 +55,7 @@ void HomePage::ExtractAppGrid()
 {
     _AppGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string PartialMatchName)
+void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string PartialMatchName) 
 { 
      //free any previously Created PkgBox 
     FreePkgBoxVector();
@@ -78,10 +76,8 @@ void HomePage::FillPkgsGrid(const int Skip ,const int Take,const std::string Par
         PkgBox* Card=CreateCard(Pkg);
         //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
         _PkgBoxVector.push_back(Card);
-        //the class PkgBox is a holder class that hold the widgets,
-        //and here we get to top widget that contain the rest of the widget in the glade file
-        auto BoxWidget=Card->GetTopWidget().get();     
-       _AppGrid->attach(*(BoxWidget),0,Row);
+        //the class PkgBox is a holder class that hold the widgets            
+       _AppGrid->attach(*(*Card),0,Row);
        
         //increase the cols so the next object will be in the next col
     }
@@ -105,7 +101,6 @@ void HomePage::FillCatagoriesGrid()
          const std::string CategoryName=Category->first;
         _CatagoriesGrid->insert_row(Index);
         _CatagoriesGrid->attach(*CreateCategoryBtn(CategoryName),0,Index);
-
     }
     _CatagoriesGrid->show_all_children();
 }
