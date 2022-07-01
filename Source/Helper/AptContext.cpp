@@ -50,9 +50,8 @@ PkgInfo AptContext::ParseRawPackage(std::string  RawPkg)
     return PkgAttributes;
 }
 
-void AptContext::ParsePackages(){
-    
- 
+void AptContext::ParsePackages()
+{ 
     //temp list to hold catagories will be used to create a unique and sorted vector
     std::list<std::string> Catagories;
     //create instance of the lebept apt binding
@@ -61,7 +60,8 @@ void AptContext::ParsePackages(){
     for(apt::Apt::RecordIterator Pkg= Apt.recordBegin();Pkg!=Apt.recordEnd();++Pkg)
     {   
         try
-        {   //parse the raw package info
+        {   pthread_t thread;
+             //parse the raw package info
             PkgInfo AptPkg =  ParseRawPackage(*Pkg);      
             // app the package into the vector           
              _Packages.push_back(AptPkg);

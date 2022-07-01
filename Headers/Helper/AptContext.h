@@ -42,7 +42,7 @@ class AptContext
     //vector that will hold all the packages information
     std::vector<PkgInfo> _Packages;  
     // will hold the state of parsing
-    static bool _IsParsingCompleted;    /*
+    bool _IsParsingCompleted;    /*
     Parse The package Raw Data and return struct that hold the package info
     */
     PkgInfo ParseRawPackage(std::string  str);
@@ -53,10 +53,6 @@ class AptContext
     create and use class if no previous instance created    
     */
     static AptContext* Use();
-    /*
-    create and use class if and dispose any previous instance created    
-    */
-    static AptContext* CreateNew();
     /*get all package names */ 
     const std::vector<std::string> GetNames();
     /*get vector that hold structs which contain the package information */
@@ -64,7 +60,7 @@ class AptContext
     /*Get All Package Catagories  */
     const std::vector<std::string> GetCatagories();
     /*return boolean represent if the package data parsing completed*/
-    const static bool IsParsingCompleted();
+    const  bool IsParsingCompleted();
 };
 
 #endif
