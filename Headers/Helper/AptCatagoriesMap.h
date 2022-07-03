@@ -4,7 +4,7 @@
 const std::map<std::string,std::string> _CatagoriesAliasMap=
 {
 
-{"All","*"},
+{"All",""},
 {"Administration","admin"},
 {"Mono/Cli","cli-mono"},
 {"Communication","comm"},
@@ -12,7 +12,7 @@ const std::map<std::string,std::string> _CatagoriesAliasMap=
 {"Development","devel"},
 {"Documentation","doc"},
 {"Fonts","font"},
-{"Games","games"},
+{"Games"," games"},
 {"Graphics","graphics"},
 {"Kernel","kernel"},
 {"libraries","libs"},
@@ -33,5 +33,4 @@ const std::map<std::string,std::string> _CatagoriesAliasMap=
 {"Database","database"},
 {"Editors","editors"},
 {"Videos","video"},
-{"Others","other"},
 };

@@ -7,7 +7,7 @@ Startup::Startup()
 }
 //to be used in pthread
 //the purpose of this function is to call use function from AptContext
-// which cause the class to read and parse
+//which cause the class to read and parse
 //the information of apt package and we do it in threads to less the application starting app time
 void *UseApt(void *)
 {

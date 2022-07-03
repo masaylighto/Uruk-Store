@@ -17,12 +17,12 @@ bool Window::LoadCssFile(std::string PathToCssFile)
 {
     try
     {
-        auto Css = Gtk::CssProvider::create();
-        struct stat Info= GetFileInfo(PathToCssFile);
-        Css->load_from_data(ReadFileText(PathToCssFile,Info.st_size));
-
-        Gtk::StyleContext::add_provider_for_screen(
-            Gdk::Screen::get_default(), Css,
+        auto Css = Gtk::CssProvider::create();  
+        Css->load_from_path(PathToCssFile);
+        Gtk::StyleContext::add_provider_for_screen
+        (
+            Gdk::Screen::get_default(), 
+            Css,
             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
         );
     }

@@ -56,9 +56,9 @@ void AptContext::ParsePackages()
     for(apt::Apt::RecordIterator Pkg= Apt.recordBegin();Pkg!=Apt.recordEnd();++Pkg)
     {   
         try
-        {   
+        {    
             // app the package into the vector           
-            _Packages.push_back(ParseRawPackage(*Pkg));
+          _Packages.push_back(ParseRawPackage(*Pkg));
         }
         catch(const std::exception& e)
         {
@@ -86,12 +86,7 @@ AptContext::AptContext()
 //to make sure we using the same instance across the application 
 AptContext* AptContext::Use()
 {
-    //to create a singleton
-    //we create static pointer so every time we call this method the pointer will be the same
-    //we check  if it null or not if its null then this the first time we call this function
-    //and so we create a new instance of the class and assign it to the pointer
-    //if its not null then and as the pointer is static then we previously called the method
-    //and there is already created instance so no need to recreate it 
+    //ensure one instance of the class will be used across the application
     static AptContext * instance;
     if (!instance)
     {
@@ -103,3 +98,8 @@ const  bool AptContext::IsParsingCompleted()
 {
     return _IsParsingCompleted;
 }
+const std::string AptContext::GetCategoryRealName(const std::string & Alias)
+{
+    return _CatagoriesAliasMap.at(Alias);
+}
+

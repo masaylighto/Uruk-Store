@@ -32,8 +32,7 @@ namespace apt = ept::apt;
 //Hold Apt Get Method
 class AptContext
 {
-    //we separate the map list into separate file cause its to large
-    //we add include it into the class cause we want the map to be used from the class
+    //we separate the map list into separate file cause its to large and we add include it into the class cause we want the map to be used from the class
     #include "AptCatagoriesMap.h"
     AptContext();   
 
@@ -47,9 +46,7 @@ class AptContext
     /*Parse all packages info */
     void ParsePackages();
     public:
-    /*
-    create and use class if no previous instance created    
-    */
+    /* create and use class if no previous instance created */
     static AptContext* Use();
     /*get vector that hold structs which contain the package information */
     const std::vector<PkgInfo> GetPackages();
@@ -57,6 +54,9 @@ class AptContext
     const std::map<std::string,std::string> GetCatagories();
     /*return boolean represent if the package data parsing completed*/
     const  bool IsParsingCompleted();
+    /*in the gui we use alias name for our package this method return the Real name for that alias*/
+    const std::string GetCategoryRealName(const std::string & Alias);
+    
 };
 
 #endif

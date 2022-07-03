@@ -21,7 +21,9 @@ private:
     //this variable will hold the Catagories Grid
     Glib::RefPtr<Gtk::Grid> _CatagoriesGrid;
     //vector contains every contain every button that represent category on the ui
-    Gtk::CheckButton* CatagoriesBtns;
+    std::vector<Gtk::CheckButton*> CatagoriesButtons;
+
+    std::map<std::string,bool> _SelectedCategories;
     /* Set All Widget Attributes */
     void SetWidgetsAttributes();
     /* event that fired when keyboard Key Released from SearchBar */
@@ -33,13 +35,18 @@ private:
      Skip and Take for Pagination
      PartialMatchName Used To Filter Package By Name   
      */
-    void NoGCOptimization FillPackagesGrid(const int Skip = 0,const int Take = 12 ,const std::string PartialMatchName="") ;
+    void NoGCOptimization FillPackagesGrid(const int Skip = 0,const int Take = 12 ,const std::string & PartialMatchName="") ;
     /*create card that represent tha packages*/
     PackageCard * CreateCard(const PkgInfo & Pkg);
     void FillCatagoriesGrid();
-    Gtk::CheckButton* CreateCategoryBtn(std::string text);
+    Gtk::CheckButton* CreateCategoryCheckBtn(const std::string & text);
     /* this method used to free the CreatePkgs */
     void NoGCOptimization ClearPackagesGrid();
+    /*   
+     PartialMatchName Used To Filter Package By Name   
+    */
+    const bool DoesPkgPassFilter(const PkgInfo & pkg,const std::string & PartialMatchName="");
+    void ToggleCategoryBtn(std::string Category);
 public:
     /* this constructor will pass its parameter to window base class */
     HomePage();

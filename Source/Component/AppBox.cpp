@@ -39,7 +39,7 @@ void PackageCard::SetDescription(std::string Description)
 
    auto Buffer=  Gtk::TextBuffer::create();
    Buffer->set_text(Description);
-    _DescriptionLabel->set_buffer(Buffer);
+   _DescriptionLabel->set_buffer(Buffer);
 }
  void PackageCard::ExtractContainer(){
 
