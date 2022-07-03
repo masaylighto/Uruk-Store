@@ -15,6 +15,8 @@ HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
     SetWidgetsAttributes(); 
     //Fill App Grid With Them
     FillPackagesGrid(0,12);
+    //fill Catagories Grid
+    FillCatagoriesGrid();
 };
 
 void HomePage::SetWidgetsAttributes()
@@ -94,10 +96,10 @@ void HomePage::FillCatagoriesGrid()
     _CatagoriesGrid->show_all_children();
 }
 
-Gtk::Button* HomePage::CreateCategoryBtn(std::string text) 
+Gtk::CheckButton* HomePage::CreateCategoryBtn(std::string text) 
 {
 
-        Gtk::Button * Btn =new Gtk::Button();     
+        Gtk::CheckButton * Btn =new Gtk::CheckButton();     
         Btn->set_label(text);
         Btn->set_hexpand(false);
         Btn->set_vexpand(true);
@@ -105,13 +107,15 @@ Gtk::Button* HomePage::CreateCategoryBtn(std::string text)
         Btn->set_size_request(100,40);
         Btn->set_margin_top(10);
         Btn->set_margin_bottom(10);
-       // Btn->set_alignment(Gtk::Align::ALIGN_CENTER,Gtk::Align::ALIGN_CENTER);
+      //  Btn->set_property_value("")
         auto Context= Btn->get_style_context();
         Context->add_class("Bg-White");
         Context->add_class("Rounded");
         Context->add_class("Border-none");
         Context->add_class("OnClick");
         Context->add_class("Noshadow");
+        Context->add_class("IsChecked");
+        Context->add_class("hiddenIndicator");
         return Btn;
 }
 HomePage::~HomePage()

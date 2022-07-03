@@ -20,6 +20,8 @@ private:
     std::vector<PackageCard *> _PackageCardVector; 
     //this variable will hold the Catagories Grid
     Glib::RefPtr<Gtk::Grid> _CatagoriesGrid;
+    //vector contains every contain every button that represent category on the ui
+    Gtk::CheckButton* CatagoriesBtns;
     /* Set All Widget Attributes */
     void SetWidgetsAttributes();
     /* event that fired when keyboard Key Released from SearchBar */
@@ -35,7 +37,7 @@ private:
     /*create card that represent tha packages*/
     PackageCard * CreateCard(const PkgInfo & Pkg);
     void FillCatagoriesGrid();
-    Gtk::Button* CreateCategoryBtn(std::string text);
+    Gtk::CheckButton* CreateCategoryBtn(std::string text);
     /* this method used to free the CreatePkgs */
     void NoGCOptimization ClearPackagesGrid();
 public:

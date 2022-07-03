@@ -90,3 +90,10 @@ border: none;
 .OnClick:active{
     background-color: #91daff;
 }
+.IsChecked:checked{
+background-color: #91daff;
+}
+.hiddenIndicator>check{
+    min-width: 1px;
+    min-height: 1px;
+ }
