@@ -2,21 +2,20 @@
 
 HomePage::HomePage():Page("Ui/Pages/HomePage.glade")
 {
-   //extract widget from builder
-   _TopBox    = ExtractRefPtrWidget<Gtk::Box>("TopBox");
-   _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");
-    ExtractAppGrid(); 
-    //Get Apt Get Packages and set them to a class member 
-    AptGet =  AptContext::Use();
+    ExtractWidgets(); 
     //AptGet Run in a thread and after this line we gonna use its data
-    //so we check and wait till its finish parsing data
-    while (!AptGet->IsParsingCompleted());
-    //Set Widgets Attributes 
+    EnsureAptFinishParsing();
     SetWidgetsAttributes(); 
     FillCatagoriesGrid();
+    InitSelectedCategoriesMap();
     FillPackagesGrid(0,12);
-};
-
+}
+void HomePage::EnsureAptFinishParsing()
+{
+    //AptGet Run in a thread and after this line we gonna use its data
+    //check and wait till its finish parsing data
+    while (!AptGet->IsParsingCompleted());
+}
 void HomePage::SetWidgetsAttributes()
 {
   _SearchBar->signal_key_release_event().connect(sigc::mem_fun(*this,&HomePage::SearchKeyReleased),false);
@@ -24,8 +23,8 @@ void HomePage::SetWidgetsAttributes()
 
 bool HomePage::SearchKeyReleased(GdkEventKey* event)
 {
-    FillPackagesGrid(0,12,_SearchBar->get_text());
-  
+    _SearchBarText=_SearchBar->get_text();
+    FillPackagesGrid(0,12);  
     return true;
 }
 void HomePage::ClearPackagesGrid() 
@@ -40,44 +39,47 @@ void HomePage::ClearPackagesGrid()
     _PackageCardVector.clear();
     
 }
-void HomePage::ExtractAppGrid()
+void HomePage::ExtractWidgets()
 {
-    _PackagesGrid = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
+   _TopBox    = ExtractRefPtrWidget<Gtk::Box>("TopBox");
+   _SearchBar = ExtractRefPtrWidget<Gtk::Entry>("SearchBar");
+   _CatagoriesGrid = ExtractRefPtrWidget<Gtk::Grid>("CatagoriesGrid");
+   _PackagesGrid   = ExtractRefPtrWidget<Gtk::Grid>("AppGrid");
 }
-const bool HomePage::DoesPkgPassFilter(const PkgInfo & Pkg,const std::string & PartialMatchName)
+const bool HomePage::DoesPkgPassFilter(const PkgInfo & Pkg)
 {
-    const bool IsNameMatch=Pkg.Name.find(PartialMatchName)!=-1 || PartialMatchName=="";
-    int Seperator= Pkg.Section.find_last_of("/")+1;
-    bool IsCatagoriesMatch ;
-
+    const bool IsNameMatch=Pkg.Name.find(_SearchBarText)!=-1 || _SearchBarText=="";
+    bool IsCatagoriesMatch =false;  
+    for( std::map<std::string,bool>::iterator Category = _SelectedCategories.begin(); Category != _SelectedCategories.end(); Category++ )
+    {
+       if (Pkg.Section.find(Category->first)!=-1)
+       {
+         IsCatagoriesMatch=Category->second;
+         break;
+       }    
+    }
     return IsNameMatch && IsCatagoriesMatch;
 }
-void HomePage::FillPackagesGrid(const int Skip ,const int Take,const std::string & PartialMatchName) 
+void HomePage::FillPackagesGrid(const int Skip ,const int Take) 
 { 
      //free any previously Created PackageCard 
     ClearPackagesGrid();
 
     const std::vector<PkgInfo> & Packages = AptGet->GetPackages(); 
-     //to Specify Which Row, we gonna insert or card into ,we define the variable here 
-    // so every 3 loop it gonna increase by 1 , cause we want only three column
- 
-    int Row=0;
-    for(int Index=Skip; Row<Take && Index < Packages.size();Index++)
+    for(int Row=0,Index=Skip; Row<Take && Index < Packages.size();Index++)
     {   
         try
-        {     
+        {        
             const PkgInfo & Pkg=Packages[Index];
-            if (!DoesPkgPassFilter(Pkg,PartialMatchName))
+            if (!DoesPkgPassFilter(Pkg))
             {    
                  continue;
             }
             Row++;    
             PackageCard* Card = CreateCard(Pkg);
             //We Save it Into A global Variable (it will be usefully in many case like de allocating the object)       
-            _PackageCardVector.push_back(Card);
-            //the class PackageCard is a holder class that hold the widgets            
+            _PackageCardVector.push_back(Card);      
             _PackagesGrid->attach(*(*Card),0,Row);        
-            //increase the cols so the next object will be in the next col
         }
         catch(const std::exception& e)
         {
@@ -89,24 +91,33 @@ PackageCard * HomePage::CreateCard(const PkgInfo & Pkg)
 {
    //Class That Represent the Cards
    PackageCard* Box = new PackageCard();   
-   //set the Name of The Box
    Box->SetName(Pkg.Name);
    Box->SetDescription(Pkg.Description);
    return Box;
 }
+void HomePage::InitSelectedCategoriesMap()
+{   
+    std::map<std::string,std::string> Categories = AptGet->GetCatagories(); 
+    for( std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); Category++)
+    {
+            _SelectedCategories[Category->second]=false;
+    }
+    //set all to be true by default
+    _SelectedCategories[""]=true;
+}
+
 void HomePage::FillCatagoriesGrid()
 {
-    _CatagoriesGrid = ExtractRefPtrWidget<Gtk::Grid>("CatagoriesGrid");
+    
     std::map<std::string,std::string> Categories = AptGet->GetCatagories(); 
-
     int Index=0;   
     for( std::map<std::string,std::string>::iterator Category = Categories.begin(); Category != Categories.end(); Category++,Index++ )
-    {
-         const std::string CategoryName=Category->first;
+    {        
+         const std::string CategoryName=Category->first;        
         _CatagoriesGrid->insert_row(Index);
-         Gtk::CheckButton* CategoryCheckBtn=CreateCategoryCheckBtn(CategoryName);
+         Gtk::CheckButton* CategoryCheckBtn=CreateCategoryCheckBtn(CategoryName);         
+        _CatagoriesGrid->attach(*CategoryCheckBtn,0,Index);  
          CatagoriesButtons.push_back(CategoryCheckBtn);
-        _CatagoriesGrid->attach(*CategoryCheckBtn,0,Index);
     }
     _CatagoriesGrid->show_all_children();
 }
@@ -117,8 +128,7 @@ Gtk::CheckButton* HomePage::CreateCategoryCheckBtn(const std::string & text)
         Gtk::CheckButton * Btn =new Gtk::CheckButton();     
         Btn->set_label(text);
         Btn->set_hexpand(false);
-        Btn->set_vexpand(true);
- 
+        Btn->set_vexpand(true); 
         Btn->set_size_request(100,40);
         Btn->set_margin_top(10);
         Btn->set_margin_bottom(10);
@@ -135,26 +145,35 @@ Gtk::CheckButton* HomePage::CreateCategoryCheckBtn(const std::string & text)
         Context->add_class("Noshadow");
         Context->add_class("IsChecked");
         Context->add_class("hiddenIndicator");
-       //  Btn->signal_toggled().data_to_slot=text;    
-
-       // auto Event= sigc::mem_fun1(*this,&HomePage::ToggleCategoryBtn);
-       // Btn->signal_toggled().data_to_slot((void*)text.c_str());
-        //Btn->signal_toggled().connect(Event,false);
+        auto Event= sigc::mem_fun(*this,&HomePage::ToggleCategoryBtn);
+        Btn->signal_toggled().connect(Event,false);
         return Btn;
 }
-void HomePage::ToggleCategoryBtn(std::string s){
-
+void HomePage::ToggleCategoryBtn()
+{
+    FillPackagesGrid(0,12);
+    SetSelectedCatagoriesIntoMap();
 }
 HomePage::~HomePage()
 {
     ClearPackagesGrid();
     _TopBox.release();
     _PackagesGrid.release();
-    _CatagoriesGrid.release();
-    
+    _CatagoriesGrid.release();    
     for (int index = 0; index < CatagoriesButtons.size(); index++)
     {
         CatagoriesButtons[index]->unreference();
     }
     CatagoriesButtons.clear();
+}
+
+void HomePage::SetSelectedCatagoriesIntoMap()
+{
+ for (int i = 0; i < CatagoriesButtons.size(); i++)
+ {
+    const Gtk::CheckButton * CategoryBtn = CatagoriesButtons[i];
+    const std::string & CategoryBtnText  = CategoryBtn->get_label();
+    const std::string & RealName         = AptGet->GetCategoryRealName(CategoryBtnText);
+   _SelectedCategories[RealName]         = CategoryBtn->get_active();
+ }
 }

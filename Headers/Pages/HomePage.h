@@ -2,8 +2,10 @@
 #include "Base/Page.h"
 #include "Helper/AptContext.h"
 #include "Component/AppBox.h"
+#include <algorithm>
 #ifndef H_HomePage
 #define H_HomePage
+
 #define NoGCOptimization __attribute__((optimize("O0")))  
 class HomePage:public Page
 {
@@ -13,7 +15,7 @@ private:
     Glib::RefPtr<Gtk::Box> _TopBox;
     Glib::RefPtr<Gtk::Entry> _SearchBar;
     //create instance of class apt
-    AptContext* AptGet;
+    AptContext* AptGet = AptContext::Use();;
     /* the grid that hold cards that show some of the application that can be downloaded */
     Glib::RefPtr<Gtk::Grid> _PackagesGrid;
     /*  this vector Will Contain a list of all Card That will be created; */
@@ -24,18 +26,19 @@ private:
     std::vector<Gtk::CheckButton*> CatagoriesButtons;
 
     std::map<std::string,bool> _SelectedCategories;
+    std::string _SearchBarText;
     /* Set All Widget Attributes */
     void SetWidgetsAttributes();
     /* event that fired when keyboard Key Released from SearchBar */
     bool SearchKeyReleased(GdkEventKey* event );
     /* Extract The App Grid From The Builder */
-    void ExtractAppGrid();
+    void ExtractWidgets();
      /*   
      fill the application grid with application 
      Skip and Take for Pagination
      PartialMatchName Used To Filter Package By Name   
      */
-    void NoGCOptimization FillPackagesGrid(const int Skip = 0,const int Take = 12 ,const std::string & PartialMatchName="") ;
+    void NoGCOptimization FillPackagesGrid(const int Skip = 0,const int Take = 12 ) ;
     /*create card that represent tha packages*/
     PackageCard * CreateCard(const PkgInfo & Pkg);
     void FillCatagoriesGrid();
@@ -45,8 +48,11 @@ private:
     /*   
      PartialMatchName Used To Filter Package By Name   
     */
-    const bool DoesPkgPassFilter(const PkgInfo & pkg,const std::string & PartialMatchName="");
-    void ToggleCategoryBtn(std::string Category);
+    const bool DoesPkgPassFilter(const PkgInfo & pkg);
+    void ToggleCategoryBtn();
+    void InitSelectedCategoriesMap();
+    void SetSelectedCatagoriesIntoMap();
+    void EnsureAptFinishParsing();
 public:
     /* this constructor will pass its parameter to window base class */
     HomePage();
