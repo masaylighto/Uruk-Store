@@ -6,7 +6,7 @@
 int main(int argc,char ** argv)
 { 
  
-      //startup routine 
+    //startup routine 
     Startup();
     //Create Gtk Application
     auto App=Gtk::Application::create(argc,argv,"Uruk.Store"); 

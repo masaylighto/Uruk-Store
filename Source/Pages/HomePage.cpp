@@ -50,9 +50,16 @@ const bool HomePage::DoesPkgPassFilter(const PkgInfo & Pkg)
 {
     const bool IsNameMatch=Pkg.Name.find(_SearchBarText)!=-1 || _SearchBarText=="";
     bool IsCatagoriesMatch =false;  
+    //check if the "" key have the value of true
+    if (_SelectedCategories[""])
+    {
+       return IsNameMatch && true;
+    }
+    
     for( std::map<std::string,bool>::iterator Category = _SelectedCategories.begin(); Category != _SelectedCategories.end(); Category++ )
     {
-       if (Pkg.Section.find(Category->first)!=-1)
+       //we exclude "" cause we check it above
+       if (Pkg.Section.find(Category->first)!=-1 && Category->first !="")
        {
          IsCatagoriesMatch=Category->second;
          break;
