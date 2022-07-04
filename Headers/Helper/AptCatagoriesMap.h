@@ -4,7 +4,7 @@
 const std::map<std::string,std::string> _CatagoriesAliasMap=
 {
 
-{"All",""},
+{"All","all"},
 {"Administration","admin"},
 {"Mono/Cli","cli-mono"},
 {"Communication","comm"},

@@ -51,15 +51,15 @@ const bool HomePage::DoesPkgPassFilter(const PkgInfo & Pkg)
     const bool IsNameMatch=Pkg.Name.find(_SearchBarText)!=-1 || _SearchBarText=="";
     bool IsCatagoriesMatch =false;  
     //check if the "" key have the value of true
-    if (_SelectedCategories[""])
+    if (_SelectedCategories["all"])
     {
        return IsNameMatch && true;
     }
     
     for( std::map<std::string,bool>::iterator Category = _SelectedCategories.begin(); Category != _SelectedCategories.end(); Category++ )
     {
-       //we exclude "" cause we check it above
-       if (Pkg.Section.find(Category->first)!=-1 && Category->first !="")
+       
+       if (Pkg.Section.find(Category->first)!=-1)
        {
          IsCatagoriesMatch=Category->second;
          break;
@@ -110,7 +110,7 @@ void HomePage::InitSelectedCategoriesMap()
             _SelectedCategories[Category->second]=false;
     }
     //set all to be true by default
-    _SelectedCategories[""]=true;
+    _SelectedCategories["all"]=true;
 }
 
 void HomePage::FillCatagoriesGrid()
@@ -158,8 +158,9 @@ Gtk::CheckButton* HomePage::CreateCategoryCheckBtn(const std::string & text)
 }
 void HomePage::ToggleCategoryBtn()
 {
-    FillPackagesGrid(0,12);
+
     SetSelectedCatagoriesIntoMap();
+    FillPackagesGrid(0,12);
 }
 HomePage::~HomePage()
 {
